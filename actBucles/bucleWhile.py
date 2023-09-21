@@ -36,3 +36,11 @@ while name.lower() != "exit":
 # Si el usuario ingresa salir se muestra este mensaje
 print("An end was given to the While loop")
 
+x= 0
+counter = 1
+
+while counter <= 10:
+    x += counter
+    counter+=1
+print(x)
+
