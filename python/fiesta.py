@@ -19,4 +19,3 @@ while True:
 
     #Se arroja un saludo para poder seguir con el bucle.000000000000
     print("Hola {guardia} porfavor completa el registro de la persona como es debido.")
-
