@@ -34,7 +34,7 @@ while name.lower() != "exit":
         print(f"Hello, {name}!")
 
 # Si el usuario ingresa salir se muestra este mensaje
-print("An end was given to the While loop")
+print("An end was given to the While loop :)")
 
 x= 0
 counter = 1
