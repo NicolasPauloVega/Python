@@ -49,4 +49,4 @@ while eleccion != 6:
         numbre2 = int(input("Ingresa otro numero: "))
 
     if eleccion == 6:
-        print("Gracias por tu participacion.")
+        print("Gracias por tu participacion :).")
