@@ -6,14 +6,10 @@ print("-Nuestras fiesta esta llena de sorpresas divertidas y deliciosas-\n")
 #Imprimimos las reglas de ingreso
 print("Para poder dar ingreso se deben seguir las siguientes instrucciones: \n1.Debe ir disfrasado de algun superheroe de marvel (Deedpool,Iron Man,Hulk,Capitan America)\n2.Debe ser mayor de edad (tener 18 años)\n3.No traer bebidas alcoholicas de lugares externos(realizar requisa)\n4.No traer armas corto punzantes o fuego.\n")
 
-#Numero de persona que quieren ingresar
-contador = 0
 
-#Numero de personas que no pueden ingresar por no cumplir requisitos.
-contadorSi = 0
+s = 0
 
-#numero de personas que pueden ingresar
-contadorNo = 0
+n = 0
 
 #Le pedimos al usuario que digite su nombre
 guardia = input("Ingresa tu nombre: \n")
@@ -42,25 +38,25 @@ while True:
         
         if disfraz.lower() == "i":
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
+            s = s+1
         elif disfraz.lower() == "d":
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
+            s = s+1
         elif disfraz.lower() == "c":
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
+            s = s+1
         elif disfraz.lower() == "h":
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
+            s = s+1
         elif disfraz.lower() == "s":
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
+            s = s+1
         elif disfraz.lower() == "cm":
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
+            s = s+1
         else:
             print("No completo el registro...\n")
-            contadorNo = contadorNo+1
+            n = n+1
             continue
         
         #Le pedimos al usuario que digite la edad del usuario para determinar si es mayor de edad o menor (el mayor puede ingresar)
@@ -68,17 +64,17 @@ while True:
 
         if edad < 18:
             print("No puede ingresar.\n")
-            contadorNo = contadorNo+1
+            s = s+1
             continue
         elif edad == 18:
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
+            s = s+1
         elif edad > 18:
             print("Puede ingresar\n")
-            contadorSi = contadorSi+1
+            s = s+1
         else:
             print("No completo el registro...\n")
-            contadorNo = contadorNo+1
+            n = n+1
             continue
 
         #Se pide al guardia que digite si el usuario trajo alguna bebida que no pertenezca a la discoteca y la quiere ingresar (no puede entrar)
@@ -86,15 +82,14 @@ while True:
 
         if req.lower() == "si":
             print("No completo el registro...\n")
-            contadorNo = contadorNo+1
+            s = s+1
             continue
         elif req.lower() == "no":
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
-            
+            s = s+1            
         else:
             print("No completo el registro...\n")
-            contadorNo = contadorNo+1
+            n = n+1
             continue
 
         #Se pide al guardia que digite si el usuario trajo algun tipo de arma y quiera ingresar (no puede entrar).
@@ -102,15 +97,15 @@ while True:
 
         if request == 1:
             print("No puede ingresar. (en caso de querer ingresar usar la fuerza)\n")
-            contadorNo = contadorNo+1
+            n = n+1
             continue
         elif request == 2:
             print("No puede ingresar. (en caso de querer ingresar usar la fuerza)\n")
-            contadorNo = contadorNo+1
+            n = n+1
             continue
         else:
             print("Puede ingresar.\n")
-            contadorSi = contadorSi+1
+            s = s+1
 
         #aqui le damos fin al bucle y la encuesta en caso de no dijitar si el bucle se repite.
         fin = input("Deseas terminar el registro? [si o no]")
@@ -122,5 +117,18 @@ while True:
 # conTotalSi = contadorSi-3
 # conTotalNo = contadorNo-3
 
-print(f"Ingresaron: {contadorSi}\n")
-print(f"No Ingresaron: {contadorNo}")
+# print(f"Ingresaron: {contadorSi}\n")
+# print(f"No Ingresaron: {contadorNo}")
+
+if s >= 4:
+    s+1
+else:
+    print("No cumplio la funcion")
+
+if n >= 4:
+    n+1
+else:
+    print("No cumplio la funcion")
+
+print(f"Ingresaron: {s}")
+print(f"No ingresaron: {n}")
