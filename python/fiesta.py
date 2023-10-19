@@ -7,10 +7,13 @@ print("-Nuestras fiesta esta llena de sorpresas divertidas y deliciosas-\n")
 print("Para poder dar ingreso se deben seguir las siguientes instrucciones: \n1.Debe ir disfrasado de algun superheroe de marvel (Deedpool,Iron Man,Hulk,Capitan America)\n2.Debe ser mayor de edad (tener 18 años)\n3.No traer bebidas alcoholicas de lugares externos(realizar requisa)\n4.No traer armas corto punzantes o fuego.\n")
 
 #Numero de persona que quieren ingresar
-count = 0
+contador = 0
 
 #Numero de personas que no pueden ingresar por no cumplir requisitos.
-count1 = 0
+contadorSi = 0
+
+#numero de personas que pueden ingresar
+contadorNo = 0
 
 #Le pedimos al usuario que digite su nombre
 guardia = input("Ingresa tu nombre: \n")
@@ -24,7 +27,7 @@ def valIngreso():
 while True:
 
     #Se arroja un saludo para poder seguir con el bucle.
-    print(f"\nSr.{guardia} completar el registro para dar ingreso al usuario.\n")
+    print(f"\nSr.{guardia} porfavor revisa las condiciones de ingreso y vuelvalo a intentar.\n")
 
     #Validamos si el usuario digito si para ejecutar el registro
     if valIngreso():
@@ -39,18 +42,25 @@ while True:
         
         if disfraz.lower() == "i":
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
         elif disfraz.lower() == "d":
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
         elif disfraz.lower() == "c":
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
         elif disfraz.lower() == "h":
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
         elif disfraz.lower() == "s":
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
         elif disfraz.lower() == "cm":
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
         else:
-            print("completa el registro...\n")
+            print("No completo el registro...\n")
+            contadorNo = contadorNo+1
             continue
         
         #Le pedimos al usuario que digite la edad del usuario para determinar si es mayor de edad o menor (el mayor puede ingresar)
@@ -58,38 +68,59 @@ while True:
 
         if edad < 18:
             print("No puede ingresar.\n")
+            contadorNo = contadorNo+1
+            continue
         elif edad == 18:
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
         elif edad > 18:
             print("Puede ingresar\n")
+            contadorSi = contadorSi+1
         else:
-            print("completa el registro...\n")
+            print("No completo el registro...\n")
+            contadorNo = contadorNo+1
             continue
 
         #Se pide al guardia que digite si el usuario trajo alguna bebida que no pertenezca a la discoteca y la quiere ingresar (no puede entrar)
         req = input("Realiza una requisa y en el caso de que el usuario tenga una bebida alcoholica en su posesion no dejarlo entrar y en el caso de no tener dejarlo pasar (Digitar [si o no])\n")
 
         if req.lower() == "si":
-            print("No puede ingresar.\n")
+            print("No completo el registro...\n")
+            contadorNo = contadorNo+1
+            continue
         elif req.lower() == "no":
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
+            
         else:
-            print("completa el registro...\n")
+            print("No completo el registro...\n")
+            contadorNo = contadorNo+1
+            continue
 
         #Se pide al guardia que digite si el usuario trajo algun tipo de arma y quiera ingresar (no puede entrar).
         request = int(input("Realiza una requisa en la cual identifique si el usuario posee un arma cortopunzante o fuego de la siguiente manera:\n1 para armas de fuego\n2 para armas blanca o cortopunzante\n3 para identificar que no posee\n"))
 
         if request == 1:
             print("No puede ingresar. (en caso de querer ingresar usar la fuerza)\n")
+            contadorNo = contadorNo+1
+            continue
         elif request == 2:
             print("No puede ingresar. (en caso de querer ingresar usar la fuerza)\n")
+            contadorNo = contadorNo+1
+            continue
         else:
             print("Puede ingresar.\n")
+            contadorSi = contadorSi+1
 
         #aqui le damos fin al bucle y la encuesta en caso de no dijitar si el bucle se repite.
         fin = input("Deseas terminar el registro? [si o no]")
 
         if fin.lower() == "si":
-            print("Gracias por terminar el registro.")
+            print("Gracias por terminar el registro.\n")
             break
 
+# conTotalSi = contadorSi-3
+# conTotalNo = contadorNo-3
+
+print(f"Ingresaron: {contadorSi}\n")
+print(f"No Ingresaron: {contadorNo}")
