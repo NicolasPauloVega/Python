@@ -121,7 +121,7 @@ while True:
 # print(f"No Ingresaron: {contadorNo}")
 
 if s >= 4:
-    s+1
+    s += 1
 else:
     print("No cumplio la funcion")
 
