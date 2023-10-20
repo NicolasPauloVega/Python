@@ -10,4 +10,3 @@ for i in range(30):
 
     print(aprendices)
     print(edades)
-
