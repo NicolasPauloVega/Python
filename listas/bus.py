@@ -12,9 +12,9 @@ for i in range(2):
     print(edades)
     continue
 
-eliminar = input('deseas eliminar a la instructora "Adriana Lucia" de la lista [Dijitar si o no]')
+buscar = input("Deseas buscar algun nombre (N) o alduna edad (E): ")
 
-if eliminar == "si":
-    aprendices.remove("Adriana Lucia")
-    edades.remove(0)
-print(f"Se elimino a la instructora adriana de la lista aprendices. \n{aprendices}")
+if buscar.lower == "N":
+    aprendices.index("Adriana Lucia")
+
+    print(f"Encontramos a {aprendices}")
