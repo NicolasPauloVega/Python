@@ -12,8 +12,13 @@ for i in range(2):
     print(edades)
     continue
 
-buscar = input("Deseas buscar algun nombre (n) o alduna edad (e): ")
+buscar = input("Digita la edad o el nombre de la persona a la que quieres buscar: ")
 
-if buscar.lower() == "n":
-    encNombre = input("Aquien deseas encontrar: ")
-    print(aprendices.index(encNombre))
+if buscar in aprendices:
+    encN = aprendices.index(buscar)
+    edad = edades[encN]
+
+    print(f"La persona que buscas se llama {buscar} y tiene {edad} años de edad")
+else:
+    print("La persona a la que buscas no esta en las lista que posee el programa.")
+
