@@ -12,9 +12,8 @@ for i in range(2):
     print(edades)
     continue
 
-buscar = input("Deseas buscar algun nombre (N) o alduna edad (E): ")
+buscar = input("Deseas buscar algun nombre (n) o alduna edad (e): ")
 
-if buscar.lower == "N":
-    aprendices.index("Adriana Lucia")
-
-    print(f"Encontramos a {aprendices}")
+if buscar.lower() == "n":
+    encNombre = input("Aquien deseas encontrar: ")
+    print(aprendices.index(encNombre))

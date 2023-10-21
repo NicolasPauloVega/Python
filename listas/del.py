@@ -14,7 +14,7 @@ for i in range(30):
 
 eliminar = input('deseas eliminar a la instructora "Adriana Lucia" de la lista [Dijitar si o no]')
 
-if eliminar == "si":
+if eliminar.lower() == "si":
     aprendices.remove("Adriana Lucia")
     edades.remove(0)
 print(f"Se elimino a la instructora adriana de la lista aprendices. \n{aprendices}")
