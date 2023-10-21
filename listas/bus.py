@@ -1,5 +1,5 @@
-aprendices = ["Adriana Lucia"]
-edades = [0]
+aprendices = []
+edades = []
 
 for i in range(30):
     registro = input("Ingresa el nombre del aprendiz: ")
