@@ -3,7 +3,7 @@ aprendices = ["Adriana Lucia"]
 edades = [0]
 
 #Creamos un bucle el cual nos permite ingresar mas valores a las listas
-for i in range(3):
+for i in range(30):
     registro = input("Ingresa el nombre del aprendiz: ")
     registro1 = int(input("Ingresa la edad del aprendiz: "))
 
