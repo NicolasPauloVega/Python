@@ -2,7 +2,7 @@ aprendices = [] #Creamos una lista vacia llamada aprendices
 edades = []     #y otra llamada edades
 
 #Iniciamos un bucle for con una iteracion en un rango de 30.
-for i in range(30):
+for i in range(2):
     registro = input("Ingresa el nombre del aprendiz: ")    #Creamos una variable la cual almacene el nombre de los aprendices
     registro1 = int(input("Ingresa la edad del aprendiz: "))    #Creamos una variable la cual almacene la edad de los aprendices
 
@@ -11,9 +11,5 @@ for i in range(30):
 
 print(aprendices) #Imprimimos los resultados de las listas
 print(edades)     #y edades
-
-#Usamos la funcion max() para hallar el aprendiz con mas años de todos.
-
-
 
 #aprendices1 = ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]
