@@ -8,8 +8,8 @@ for i in range(30):
     aprendices.append(registro)
     edades.append(registro1)
 
-    print(aprendices)
-    print(edades)
+aprendices.insert(0, "Adriana Lucia")
+edades.insert(0, "")
 
-    aprendices.insert(0, "Adriana Lucia")
-    edades.insert(0, "")
+print(aprendices)
+print(edades)
