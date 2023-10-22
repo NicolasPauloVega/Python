@@ -9,8 +9,8 @@ for i in range(30):
     aprendices.append(registro) #Agregamos los valores de la variable registro en la lista de aprendices.
     edades.append(registro1)    #Agregamos los valores de la variable regitro1 en la lista de edades.
 
-    print(aprendices) #Imprimimos los resultados de las listas
-    print(edades)     #y edades
+print(aprendices) #Imprimimos los resultados de las listas
+print(edades)     #y edades
 
 conteo = 0 #Creamos una variable la cual valla contando desde 0
 
