@@ -28,3 +28,5 @@ if eliminar.lower() == "si":
 else:
     #Si decide no eliminar el valor se arroja este mensaje
     print(f'No se elimino a la instructora "Adriana Lucia" de la lista. \n{aprendices}={edades}')
+
+# aprendices1 = ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]

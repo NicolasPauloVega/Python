@@ -12,13 +12,8 @@ for i in range(30):
 print(aprendices) #Imprimimos los resultados de las listas
 print(edades)     #y edades
 
-conteo = 0 #Creamos una variable la cual valla contando desde 0
+#Usamos la funcion max() para hallar el aprendiz con mas años de todos.
 
-#Iniciamos un bucle que al momento de detectar que una persona tiene 18 años cuente de 1 en uno
-for registro1 in edades:
-    if registro1 == 18:
-        conteo+=1
 
-print(conteo)
 
-# aprendices1 = ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]
+#aprendices1 = ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]

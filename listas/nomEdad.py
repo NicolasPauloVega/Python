@@ -12,3 +12,5 @@ for i in range(30):
     #Creamos otro bucle for para unir las 2  listas y mostrar a los aprendices con su respectiva edad
     for registro, registro1 in zip(aprendices,edades):
         print(f"El aprendiz {registro} Tiene {registro1} años de edad")
+
+# aprendices1 = ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]
