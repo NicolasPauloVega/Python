@@ -1,3 +1,5 @@
+#Cuente cuantos aprendices tienen 18 años
+
 #Creamos una lista llamada aprendices con unos valores predeterminados y otra vacia llamada edades
 aprendices = ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]
 edades = []
@@ -22,4 +24,4 @@ for registro1 in edades:
     if registro1 == 18:
         conteo+=1
 
-print(conteo)
+print(f"Hay un total de {conteo} aprendices con 18 años.")

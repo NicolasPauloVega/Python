@@ -1,3 +1,5 @@
+#Borre el nombre de la instructora de la lista
+
 #Creamos una lista llamada aprendices con unos valores predeterminados y otra vacia llamada edades
 aprendices = ["Adriana Lucia Rincon","Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]
 edades = [40]

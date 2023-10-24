@@ -1,3 +1,5 @@
+#Cree una lista vacía  denominada aprendices y edades, llénelas solicitando los datos por teclado y Imprima las listas
+
 aprendices = [] #Creamos una lista vacia llamada aprendices
 edades = []     #y otra llamada edades
 
