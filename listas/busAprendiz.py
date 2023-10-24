@@ -1,18 +1,19 @@
-#Creamos 2 listas vacias
-aprendices = []
+#Creamos una lista llamada aprendices con unos valores predeterminados y otra vacia llamada edades
+aprendices = ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]
 edades = []
 
-#Creamos un bucle el cual almacene los nombres y las edades de los aprendices y los agrege a la lista
+#Importamos el modulo ramdom el cual genera numeros aleatorios
+import random
+
+#Creamos un bucle el cual genera un total de 30 iteraciones.
 for i in range(30):
-    registro = input("Ingresa el nombre del aprendiz: ")
-    registro1 = int(input("Ingresa la edad del aprendiz: "))
+    #creamos una variable la cual dara numeros randoms con la funcion "radint" que empiezan del 16 y terminan en el 20
+    edad = random.randint(16,20)
+    #Agregamos los datos de la variable edad a la lista edades
+    edades.append(edad)
 
-    aprendices.append(registro)
-    edades.append(registro1)
-
-#Imprimimos las listas con los nuevos valores
-print(aprendices)
-print(edades)
+print(aprendices) #Imprimimos los resultados de las listas
+print(edades)     #y edades
 
 #Creamos una variable la cual pregunte si desea buscar un aprendiz o por el nombre o por la edad
 entrar = input("Deseas buscar por nombre [n] o por edades[e]")

@@ -1,19 +1,19 @@
-#Creamos dos listas las cuales tienen 2 valores predeterminados los cuales son "Adriana Lucia" y 0
-aprendices = ["Adriana Lucia"]
-edades = [0]
+#Creamos una lista llamada aprendices con unos valores predeterminados y otra vacia llamada edades
+aprendices = ["Adriana Lucia Rincon","Juan Diego","Mathew Guarnizo","Maria Fernanda","Melissa","Nicolas Paulo","Miguel Angel","Stiven","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly","Camila","Stiwar","Lina Vanesa","Paula Garcia","Maria Paula","Vanesa","Kevin Hernandez","Yency","Matias","Sebastian Tovar","Cristian Peña","Dahiana","Kevin Eduardo","Santiago Tomas","Nicolas Fierro","Laura Benavidez","Willfran"]
+edades = [40]
 
-#Creamos un bucle el cual nos permite ingresar mas valores a las listas
+#Importamos el modulo ramdom el cual genera numeros aleatorios
+import random
+
+#Creamos un bucle el cual genera un total de 30 iteraciones.
 for i in range(30):
-    registro = input("Ingresa el nombre del aprendiz: ")
-    registro1 = int(input("Ingresa la edad del aprendiz: "))
+    #creamos una variable la cual dara numeros randoms con la funcion "radint" que empiezan del 16 y terminan en el 20
+    edad = random.randint(16,20)
+    #Agregamos los datos de la variable edad a la lista edades
+    edades.append(edad)
 
-    #Agregamos los valores dado en registro y registro1 a la lista aprendices y edades
-    aprendices.append(registro)
-    edades.append(registro1)
-
-#Imprmimos cada lista
-print(aprendices)
-print(edades)
+print(aprendices) #Imprimimos los resultados de las listas
+print(edades)     #y edades
 
 #Creamos una variable la cual pregunte si se desea eliminar a "Adrana Lucia de la lista"
 eliminar = input('deseas eliminar a la instructora "Adriana Lucia" de la lista [Dijitar si o no]')
