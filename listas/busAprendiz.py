@@ -18,7 +18,7 @@ print(aprendices) #Imprimimos los resultados de las listas
 print(edades)     #y edades
 
 #Creamos una variable la cual pregunte si desea buscar un aprendiz o por el nombre o por la edad
-entrar = input("Deseas buscar por nombre [n] o por edades[e]")
+entrar = input("Deseas buscar por nombre [n] o por edades[e] ")
 
 #creamos unas condiciones las cuales busque al aprendiz ya sea por el nombre [n] o por la edad [e]
 if entrar.lower() == "n":
@@ -35,7 +35,7 @@ if entrar.lower() == "n":
         #Se manda un mensaje de error si no se encuentra al aprendiz.
         print("La persona a la que buscas no esta en las lista que posee el programa.")
 #Se crea otra condicion por si el usuario no quiere buscar al aprendiz por el nombre sino por la edad
-elif entrar.lower() == "e":
+elif entrar.upper() == "E":
     #Creamos una variable la cual pregunta la edad del aprendiz desea buscar.
     buscar = int(input("Digita la edad del aprendiz que desea buscar: "))
     #Creamos una condicion la cual buscara al aprendiz por la edad que digito el usuario.
