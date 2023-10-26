@@ -23,7 +23,7 @@ entrar = input("Deseas buscar por nombre [n] o por edades[e]")
 #creamos unas condiciones las cuales busque al aprendiz ya sea por el nombre [n] o por la edad [e]
 if entrar.lower() == "n":
     #Creamos una variable la cual pregunta a quien desea buscar.
-    buscar = input("Digita el nombre del aprendiz que desea buscar: ")
+    buscar = input("Digita el nombre del aprendiz que desea buscar: ").title()
     #Creamos una condicion la cual busca entre todos los aprendices el nombre que digito el usuario.
     if buscar in aprendices:
         #Creamos dos variables una que busca el nombre del aprendiz que digito el usuario y otra que busca en la misma posicion la edad del aprendiz.
