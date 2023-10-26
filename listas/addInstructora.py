@@ -17,7 +17,7 @@ for i in range(30):
 print(aprendices) #Imprimimos los resultados de las listas
 print(edades)     #y edades
 
-aprendices.insert(0, "Adriana Lucia") #Agregamos valores en la primera posicion de la lista
+aprendices.insert(1, "Adriana Lucia") #Agregamos valores en la primera posicion de la lista
 
 print(aprendices) #Imprimimos los resultados de las listas
 print(edades)     #y edades
