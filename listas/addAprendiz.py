@@ -8,7 +8,7 @@ edades = []
 import random
 
 #Creamos un bucle el cual genera un total de 30 iteraciones.
-for i in range(30):
+for i in range(31):
     #creamos una variable la cual dara numeros randoms con la funcion "radint" que empiezan del 16 y terminan en el 20
     edad = random.randint(16,20)
     #Agregamos los datos de la variable edad a la lista edades
