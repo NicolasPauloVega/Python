@@ -22,8 +22,8 @@ mostrar = input("Deseas ver los 10 ultimos de la lista? [si o no] ")
 
 #Creamos unas condiciones las cuales si el usuario desea ver los 10 ultimos aprendices se los mostrar y si no lo desea se los mostrara completa
 if mostrar.lower() == "si":
-    print(aprendices[19:31])
-    print(edades[19:31])
+    print(aprendices[20:30])
+    print(edades[20:30])
 else:
     print(aprendices)
     print(edades)

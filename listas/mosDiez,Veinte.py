@@ -22,8 +22,8 @@ mostrar = input("Deseas ver del 10 al 20 aprendiz de la lista? [si o no] ")
 
 #Creamos unas condiciones las cuales si el usuario desea ver del decimo aprendiz hasta el venteavo aprendiz se los mostrar y si no lo desea se los mostrara completa
 if mostrar.lower() == "si":
-    print(aprendices[9:21])
-    print(edades[9:21])
+    print(aprendices[10:20])
+    print(edades[10:20])
 else:
     print(aprendices)
     print(edades)
