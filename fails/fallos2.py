@@ -27,7 +27,7 @@ elif entrar == "N":
     buscar = int(input("Digita la edad del aprendiz que desea buscar: "))
     if buscar in edades:
         encE = edades.index(buscar)
-        name = aprendices[encE]
+        name = aprendices[enc]
         print(f"El aprendiz que buscas tiene {buscar} años de edad y se llama {name}")
     else:
         print("La persona a la que buscas no esta en las lista que posee el programa.")

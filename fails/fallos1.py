@@ -8,8 +8,10 @@ import ramdom
 for i in range(30):
     edad = ramdom.radit(16,20)
     edades.append(edad)
-    print(aprendices)
-    print(edades)
-    aprendices.insert(1, "Adriana Lucia")
-    print(aprendices)
-    print(edades)
+
+print(aprendices)
+print(edades)
+
+aprendices.insert(1, "Adriana Lucia")
+print(aprendices)
+print(edades)
