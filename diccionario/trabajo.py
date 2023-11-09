@@ -120,7 +120,7 @@ print()
 def busacarEquipo():
 
     #Pedimos la id a buscar
-    numId = int(input("Que equipodeseas encontrar por la ID "))
+    numId = int(input("Que equipo deseas encontrar por la ID "))
 
     #Creamos un bucle que busque en todas las llaves y valores hasta coincidir con el que coloco el usuario.
     for pc, idPc in computadores.items():
@@ -224,3 +224,5 @@ def eliminar():
 
 #Llamamos a la funcion
 eliminar()
+
+print("\nGracias por terminar el registro.")
