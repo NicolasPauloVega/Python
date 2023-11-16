@@ -114,7 +114,7 @@ class camion():
     def desplazamiento(self):
         print("Me desplazo utilizando 6 ruedas. ")
 
-"""Cambia de forma el vahiculo para encontrar la clase que necesitemos"""
+"""Cambia de forma el vehiculo para encontrar la clase que necesitemos"""
 def desplazamientoVehiculo(vehiculo):
     vehiculo.desplazamiento()
 
