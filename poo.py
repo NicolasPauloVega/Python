@@ -1,7 +1,7 @@
 #Consulte un ejemplo donde se declare una clase con atributos y métodos.
 
 #Creamos un clase
-class Perro():
+class perro():
     """ Modelo sencillo de un perro. """ #<--- Doc string que sirve para describir los bloques de codigo
 
     #Se crearan 3 metodos para perro que son para darle nombre y edad,sentarse y rodar.
@@ -18,26 +18,26 @@ class Perro():
         """ Simular rodar en el piso. """
         print(self.nombre.title() + " rodó en el piso. ")
 
-mi_perro = Perro("willie", 6) #Se crea una instancia la cual mostrara el nombre y la edad del perro
-tu_perro = Perro("Lucy", 3)
+miPerro = perro("willie", 6) #Se crea una instancia la cual mostrara el nombre y la edad del perro
+tuPerro = perro("Lucy", 3)
 
-print("Mi perro se llama" + mi_perro.nombre.title() + ".")
-print("Mi perro tiene " + str(mi_perro.edad) + "años de edad.")
+print("Mi perro se llama" + miPerro.nombre.title() + ".")
+print("Mi perro tiene " + str(miPerro.edad) + "años de edad.")
 
-mi_perro.sentarse()
-mi_perro.rodar()
+miPerro.sentarse()
+miPerro.rodar()
 print()
-print("Tu perro se llama" + tu_perro.nombre.title() + ".")
-print("Tu perro tiene " + str(tu_perro.edad) + "años de edad.")
+print("Tu perro se llama" + tuPerro.nombre.title() + ".")
+print("Tu perro tiene " + str(tuPerro.edad) + "años de edad.")
 
-tu_perro.sentarse() 
-tu_perro.rodar()
+tuPerro.sentarse() 
+tuPerro.rodar()
 
 print("---------------------------------------------------------------------------------------------------------------------")
 
 #Crear una herencia
 
-class Coche():
+class coche():
     """Una presentación sencilla de un coche."""
     def __init__(self, marca, modelo, ano):
         """Inicializamos los atributos para describir un coche."""
@@ -72,7 +72,7 @@ class Coche():
     def llenarTanqueGas(self):
         print("tanque lleno. ")
 
-class CocheElec(Coche):
+class cocheElec(coche):
     """Representar las caracteristicas de un coche, especificamente coches electricos."""
     def __init__(self, marca, modelo, ano):
         """
@@ -89,7 +89,7 @@ class CocheElec(Coche):
         """Los coches electricos no necesitan un tanque de gasolina."""
         print("Este coche no necesita un tanque d gasolina.")
 
-miTesla = CocheElec('tesla', 'modelo s', 2022)
+miTesla = cocheElec('tesla', 'modelo s', 2022)
 print(miTesla.obtenerNombreDescriptivo())
 miTesla.descripcionBateria()
 miTesla.llenarTanqueGas()
