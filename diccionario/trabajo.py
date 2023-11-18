@@ -188,12 +188,14 @@ def modificar():
       computadores[num]["ID"] = n
     else:
       print("No se ha cambiado el ID")
+
     numDispositivos = input("Deseas cambiar los dispositivos? (si o no)")
     if numDispositivos == 'si':
       n = input("Ingresa los nuevos dispositivos")
       computadores[num]["Dispositivos"] = n
     else:
       print("No se ha cambiado los dispositivos")
+
     numAmb = (input("Desea cambiar el ambiente (si o no)"))
     if numAmb == 'si':
        n = int(input("Ingresa el numero del nuevo ambiente: "))
@@ -201,6 +203,7 @@ def modificar():
     else:
        print("No se cambio el ambiente.")
     print(computadores)
+    
   else:
     print("No existe el computador")
 
