@@ -17,7 +17,7 @@ class Computadores():
             self.propietario = input("Ingresa el nombre del aprendis encargado del computador: ")
             print("Se añadio el computador al ambiente: " + str(self.ambiente) + " con la id: " + str(self.id) + " con sus respectivos dispositivos: " + self.dispositivo.title() + ".\n")
         
-        self.addPc.update({str(self.id): {"dispositivos": self.dispositivo.title(), "Ambiente": self.ambiente}, "Propietario": {self.propietario}})
+        self.addPc.update({str(self.id): {"dispositivos": self.dispositivo.title(), "Ambiente": self.ambiente}, "Propietario": {self.propietario.title()}})
         print(self.addPc)
 
     def editarPc(self):
@@ -64,9 +64,8 @@ class Computadores():
                         continue
                 else:
                     print("No se realizo ningun cambio.")
-                    break
         else:
-            print("No se realizo ningun cambio. ")
+            print("No se realizo ningun cambio.")
 
 
 computadores = Computadores()
