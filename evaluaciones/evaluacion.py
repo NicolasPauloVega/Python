@@ -90,7 +90,7 @@ class postulado():
 
         print("Este es el conteo de los candidatos: ")
 
-        print()
+        print(f"Gustavo tuvo un total de: {cont} votos.")
         
 postulado.votCand()
 postulado.registro()
