@@ -21,7 +21,7 @@ candidato = {
         },
         5: {
             "Identificacion": 0,
-            "Nombre": "Blanco"
+            "Nombre": "Voto en blanco"
         }
     }
 
@@ -88,9 +88,14 @@ class postulado():
 
             break
 
-        print("Este es el conteo de los candidatos: ")
+        print("Este es el conteo de votos de los candidatos: ")
 
-        print(f"Gustavo tuvo un total de: {cont} votos.")
+        print(f"Gustavo Puerta tuvo un total de: {cont} votos.")
+        print(f"Carlos Luis tuvo un total de: {cont1} votos.")
+        print(f"Daniela Vargas tuvo un total de: {cont2} votos.")
+        print(f"Luisa Gimenez tuvo un total de: {cont3} votos.")
+        print(f"Voto en blanco tuvo un total de: {cont4} votos.")
+
         
 postulado.votCand()
 postulado.registro()
