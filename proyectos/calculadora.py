@@ -50,7 +50,7 @@ botonParentesis2 = Button(ventana, text=")", width=5, height=2, command= lambda:
 botonPunto = Button(ventana, text=".", width=5, height=2, command= lambda: clickBoton("."))
 
 """Se crean 5 botones que representaran las operaciones y la igualdad con su debido tamaño y separacion"""
-botonDiv = Button(ventana, text="÷", width=5, height=2, command= lambda: clickBoton("÷"))
+botonDiv = Button(ventana, text="÷", width=5, height=2, command= lambda: clickBoton("/"))
 botonMul = Button(ventana, text="x", width=5, height=2, command= lambda: clickBoton("*"))
 botonSum = Button(ventana, text="+", width=5, height=2, command= lambda: clickBoton("+"))
 botonRes = Button(ventana, text="-", width=5, height=2, command= lambda: clickBoton("-"))
