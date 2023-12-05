@@ -3,6 +3,7 @@ from tkinter import * #Importamos todos los valores de la libreria tkinter
 
 ventana = Tk() #Creamos la ventana donde se almacena toda la informacion del programa
 ventana.title("Calculadora") #Colocamos un titulo para la ventana.
+ventana.config(bg="dark blue") #colocamos un color a la ventana
 
 i = 0 #Creamos una variable global
 
@@ -85,5 +86,17 @@ botonRes.grid(row = 4,column = 3, padx = 5, pady = 5)
 boton0.grid(row = 5,column = 0, columnspan= 2, padx = 5, pady = 5)
 botonPunto.grid(row = 5,column = 2, padx = 5, pady = 5)
 botonIgual.grid(row = 5,column = 3, padx = 5, pady = 5)
+
+#Color a cada boton
+"""Se agregan colores a los botones"""
+botonBorrar.config(bg="red")
+botonParentesis1.config(bg="red")
+botonParentesis2.config(bg="red")
+botonDiv.config(bg="red")
+botonMul.config(bg="red")
+botonSum.config(bg="red")
+botonRes.config(bg="red")
+botonIgual.config(bg="red")
+botonPunto.config(bg="yellow")
 
 ventana.mainloop() #reconoce todos los eventos que ocurran en el programa.
