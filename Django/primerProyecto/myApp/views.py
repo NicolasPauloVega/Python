@@ -29,13 +29,19 @@ def index (request):
     while year <= 2050:
         template += f"<li> {str(year)} </li>"
         year += 1
-    """</ul><hr>"""
-
-    if year % 4 != 0:
-        print("No es bisiesto")
-    elif year % 4 == 0 and year % 100 == 0 or year % 400 == 0:
-        print("Es un año bisiento")
+    template += """</ul><hr>"""
 
     
-    return HttpResponse(template)
+    template += """
+                    <h1>Años biciestos</h1>
+                    <ul>
+                    """
+    year1 = 2024
+    while year1 <= 2050:
+        if year1 % 4 == 0:
+            template += f"{str(year1)} es un año biciesto"
+        year1 += 1
+    template += "</ul><hr>"
 
+
+    return HttpResponse(template)
