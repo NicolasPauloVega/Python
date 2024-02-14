@@ -19,10 +19,10 @@ def presentacion (request):
 def index (request):
     #Se crea una variable que almacene la informacion que se quiere poner en la pagina.
     template = """
-                        <h1>Inicio</h1>
-                        <p>Años desde el 2024 hasta 2050</p>
-                        <ul>
-                        """
+                    <h1>Inicio</h1>
+                    <p>Años desde el 2024 hasta 2050</p>
+                     <ul>
+                 """
     #Se crea una variable que almacene el año 2024
     year=2024
     #se crea una lista a cual se actualizara cada vez que se entre
@@ -35,13 +35,13 @@ def index (request):
     template += """
                     <h1>Años biciestos</h1>
                     <ul>
-                    """
+                """
     year1 = 2024
     while year1 <= 2050:
         if year1 % 4 == 0:
-            template += f"{str(year1)} es un año biciesto"
+            template += f"<li>{str(year1)} (Es un año biciesto)</li> "
         year1 += 1
-    template += "</ul><hr>"
+    template += """</ul><hr>"""
 
 
     return HttpResponse(template)
