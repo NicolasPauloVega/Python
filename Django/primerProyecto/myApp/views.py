@@ -2,15 +2,35 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 
+layout = """
+        <h1>Sitio web con Django | Nicolas Paulo Vega</h1>
+        </hr>
+        <ul>
+            <li>
+                <a href="/hola_mundo">Hola Mundo</a>
+            </li>
+            <li>
+                <a href="/saludo">Saludo</a>
+            </li>
+            <li>
+                <a href="/presentacion">Presentacion</a>
+            </li>
+            <li>
+                <a href="/index">Inicio</a>
+            </li>
+        </ul>
+        """
+
+
 def hola_mundo (request):
-    return HttpResponse("Hola Mundo desde Django")
+    return HttpResponse(layout+"Hola Mundo desde Django")
 def saludo (request):
-    return HttpResponse("""
+    return HttpResponse(layout+"""
                         <h1>Saludo de bienvenida</h1>
                         <h2>bienvenido al SENA Tolima</h2>
                         """)
 def presentacion (request):
-    return HttpResponse("""
+    return HttpResponse(layout+"""
                         <h1>Identificación: </h1>
                         <h2>Nicolas Paulo Vega</h2>
                         <h2>nicolas.paulo.vega06@gmail.com</h2>
@@ -54,4 +74,4 @@ def index (request):
         year2 += 1
     template += """</ul><hr>"""
 
-    return HttpResponse(template)
+    return HttpResponse(layout+template)
