@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 
@@ -27,7 +27,9 @@ layout = """
 
 def hola_mundo (request):
     return HttpResponse(layout+"Hola Mundo desde Django")
-def saludo (request):
+def saludo (request, redirigir=0):
+    if redirigir == 1:
+        return redirect('contacto', nombre="Ana", apellido="Andrade")
     return HttpResponse(layout+"""
                         <h1>Saludo de bienvenida</h1>
                         <h2>bienvenido al SENA Tolima</h2>
@@ -82,14 +84,11 @@ def index (request):
 def contacto (request, nombre="", apellido=""):
     aprendiz=""
     if nombre and apellido:
-        aprendiz="<h2>Nombre Completo: </h2>"
         aprendiz+=f"<h3>{nombre} {apellido}</h3>"
     elif nombre:
-        aprendiz="<h2>Nombre: </h2>"
-        aprendiz += f"<h3>{nombre}</h3>"
+        aprendiz += f"<h2>Nombre: {nombre}</h2>"
     elif apellido:
-        aprendiz="<h2>Apellido: </h2>"
-        aprendiz += f"<h3>{apellido}</h3>"
+        aprendiz += f"<h2>Apellido: {apellido}</h2>"
     else:
-        aprendiz += f"<h3>Nombre y Apellido inexistente</h3>"
+        aprendiz += f"<h2>Nombre y Apellido inexistente</h2>"
     return HttpResponse(layout + f"<h2>Contacto: </h2>" + aprendiz)
