@@ -24,5 +24,5 @@ urlpatterns = [
     path('saludo/', myApp.views.saludo, name="Saludo"),
     path('presentacion/', myApp.views.presentacion, name="Presentacion"),
     path('', myApp.views.index, name="index"),
-    path('contacto/', myApp.views.contacto, name="contacto"),
+    path('contacto/<str:nombre>', myApp.views.contacto, name="contacto"),
 ]
