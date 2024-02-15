@@ -39,9 +39,19 @@ def index (request):
     year1 = 2024
     while year1 <= 2050:
         if year1 % 4 == 0:
-            template += f"<li>{str(year1)} (Es un año biciesto)</li> "
+            template += f"<li>{str(year1)}</li>"
         year1 += 1
     template += """</ul><hr>"""
 
+    template += """
+                <h1>Años pares</h1>
+                <ul>
+                """
+    year2 = 2024
+    while year2 <= 2050:
+        if year2 % 2 == 0:
+            template += f"<li>{str(year2)}</li>"
+        year2 += 1
+    template += """</ul><hr>"""
 
     return HttpResponse(template)
