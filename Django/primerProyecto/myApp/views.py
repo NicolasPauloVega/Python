@@ -75,3 +75,6 @@ def index (request):
     template += """</ul><hr>"""
 
     return HttpResponse(layout+template)
+
+def contacto (request):
+    return HttpResponse(layout + "<h2>Contacto</h2>")
