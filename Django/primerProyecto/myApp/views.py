@@ -79,5 +79,17 @@ def index (request):
 
     return HttpResponse(layout+template)
 
-def contacto (request, nombre):
-    return HttpResponse(layout + f"<h2>Contacto: {nombre}</h2>")
+def contacto (request, nombre="", apellido=""):
+    aprendiz=""
+    if nombre and apellido:
+        aprendiz="<h2>Nombre Completo: </h2>"
+        aprendiz+=f"<h3>{nombre} {apellido}</h3>"
+    elif nombre:
+        aprendiz="<h2>Nombre: </h2>"
+        aprendiz += f"<h3>{nombre}</h3>"
+    elif apellido:
+        aprendiz="<h2>Apellido: </h2>"
+        aprendiz += f"<h3>{apellido}</h3>"
+    else:
+        aprendiz += f"<h3>Nombre y Apellido inexistente</h3>"
+    return HttpResponse(layout + f"<h2>Contacto: </h2>" + aprendiz)
