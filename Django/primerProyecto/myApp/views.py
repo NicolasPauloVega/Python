@@ -16,7 +16,7 @@ layout = """
                 <a href="/presentacion">Presentacion</a>
             </li>
             <li>
-                <a href="/index">Inicio</a>
+                <a href="/">Inicio</a>
             </li>
         </ul>
         """
