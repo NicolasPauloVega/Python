@@ -2,45 +2,17 @@ from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 
-layout = """
-        <h1>Sitio web con Django | Nicolas Paulo Vega</h1>
-        </hr>
-        <ul>
-            <li>
-                <a href="/hola_mundo">Hola Mundo</a>
-            </li>
-            <li>
-                <a href="/saludo">Saludo</a>
-            </li>
-            <li>
-                <a href="/presentacion">Presentacion</a>
-            </li>
-            <li>
-                <a href="/">Inicio</a>
-            </li>
-            <li>
-                <a href="/contacto">Contacto</a>
-            </li>
-        </ul>
-        """
-
-
 def hola_mundo (request):
-    return HttpResponse(layout+"Hola Mundo desde Django")
+    return redirect(request, 'hola_mundo.html')
+
 def saludo (request, redirigir=0):
     if redirigir == 1:
         return redirect('contacto', nombre="Ana", apellido="Andrade")
-    return HttpResponse(layout+"""
-                        <h1>Saludo de bienvenida</h1>
-                        <h2>bienvenido al SENA Tolima</h2>
-                        """)
+    return redirect(request, 'saludo.html')
+
 def presentacion (request):
-    return HttpResponse(layout+"""
-                        <h1>Identificación: </h1>
-                        <h2>Nicolas Paulo Vega</h2>
-                        <h2>nicolas.paulo.vega06@gmail.com</h2>
-                        <h2>+57 310 207 5306</h2>
-                        """)
+    return redirect(request, 'presentacion.html')
+
 def index (request):
     #Se crea una variable que almacene la informacion que se quiere poner en la pagina.
     template = """
@@ -79,7 +51,7 @@ def index (request):
         year2 += 1
     template += """</ul><hr>"""
 
-    return HttpResponse(layout+template)
+    return redirect(request, 'index.hmtl')
 
 def contacto (request, nombre="", apellido=""):
     aprendiz=""
@@ -91,4 +63,4 @@ def contacto (request, nombre="", apellido=""):
         aprendiz += f"<h2>Apellido: {apellido}</h2>"
     else:
         aprendiz += f"<h2>Nombre y Apellido inexistente</h2>"
-    return HttpResponse(layout + f"<h2>Contacto: </h2>" + aprendiz)
+    return redirect(request, 'contacto.html')
