@@ -66,3 +66,10 @@ def contacto (request, nombre="", apellido=""):
         aprendiz += f"<h2>Nombre y Apellido inexistente</h2>"
 
     return render(request, 'contacto.html')
+
+
+def quienes_somos(request):
+    return render(request, 'qs.html')
+
+def productos_servicios(request):
+    return render(request, 'pys.html')
