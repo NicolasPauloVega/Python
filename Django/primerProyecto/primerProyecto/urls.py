@@ -28,4 +28,5 @@ urlpatterns = [
     path('contacto/', myApp.views.contacto, name="contacto"),
     path('contacto/<str:nombre>', myApp.views.contacto, name="contacto"),
     path('contacto/<str:nombre>/<str:apellido>', myApp.views.contacto, name="contacto"),
+    
 ]

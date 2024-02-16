@@ -3,15 +3,16 @@ from django.shortcuts import render, HttpResponse, redirect
 # Create your views here.
 
 def hola_mundo (request):
-    return redirect(request, 'hola_mundo.html')
+    return render(request, 'hola_mundo.html')
+
 
 def saludo (request, redirigir=0):
     if redirigir == 1:
         return redirect('contacto', nombre="Ana", apellido="Andrade")
-    return redirect(request, 'saludo.html')
+    return render(request, 'saludo.html')
 
 def presentacion (request):
-    return redirect(request, 'presentacion.html')
+    return render(request, 'presentacion.html')
 
 def index (request):
     #Se crea una variable que almacene la informacion que se quiere poner en la pagina.
@@ -51,7 +52,7 @@ def index (request):
         year2 += 1
     template += """</ul><hr>"""
 
-    return redirect(request, 'index.hmtl')
+    return render(request,'index.html')
 
 def contacto (request, nombre="", apellido=""):
     aprendiz=""
@@ -63,4 +64,5 @@ def contacto (request, nombre="", apellido=""):
         aprendiz += f"<h2>Apellido: {apellido}</h2>"
     else:
         aprendiz += f"<h2>Nombre y Apellido inexistente</h2>"
-    return redirect(request, 'contacto.html')
+
+    return render(request, 'contacto.html')
