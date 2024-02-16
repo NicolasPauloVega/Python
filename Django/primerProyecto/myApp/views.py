@@ -8,7 +8,7 @@ def hola_mundo (request):
 
 def saludo (request, redirigir=0):
     if redirigir == 1:
-        return redirect('contacto', nombre="Ana", apellido="Andrade")
+        return redirect('contacto', nombre="Ana", apellido="Cruz")
     return render(request, 'saludo.html')
 
 def presentacion (request):

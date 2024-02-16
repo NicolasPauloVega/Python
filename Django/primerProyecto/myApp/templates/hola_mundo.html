@@ -1,2 +1,10 @@
-<h1>Hola Mundo desde Django</h1>
-<h2>Framework de Desarrollo para la web</h2>
+{% extends 'layout.html' %}
+
+{% block title %}
+    hola_mundo
+{% endblock %}
+
+{% block content %}
+    <h1>Hola Mundo desde Django</h1>
+    <h2>Framework de Desarrollo para la web</h2>
+{% endblock %}
