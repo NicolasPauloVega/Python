@@ -4,6 +4,45 @@
     contacto
 {% endblock %}
 
+{% block seccion %}
+    <strong>Contacto</strong>
+{% endblock %}
+
 {% block content %}
-<h2>Contacto</h2>
+<h1>Contacto</h1>
+
+<p>Si tienes alguna duda o inquietud porfavor dejanos tu comentario y nosotros nos encargaremos de ayudarte.</p>
+<h3>Llenar porfavor el siguiente formulario.</h3>
+
+<form action="">
+    <h3>Datos</h3>
+
+    <label>Nombre Completo</label><br>
+    <input type="text"><br><br>
+    
+    <label>Tipo de documento</label><br>
+    <select name="documento">
+        <option value="0"></option>
+        <option value="1">Cedula</option>
+        <option value="2">Tarjeta de identidad</option>
+        <option value="3">Cedula de Extranjeria</option>
+    </select><br><br>
+
+    <label>N° Documento</label><br>
+    <input type="number" min="0"><br><br>
+
+    <label>N° Celular</label><br>
+    <input type="number" min="0"><br><br>
+
+    <label>Correo Electronico</label><br>
+    <input type="text"><br><br>
+
+    <label>Comentario: </label><br>
+    <textarea name="textarea" rows="10" cols="50"></textarea>
+    <br><br>
+
+    <button>Borrar</button>
+    <button>Enviar</button>
+</form>
+<br>
 {% endblock %}
