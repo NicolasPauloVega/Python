@@ -11,15 +11,16 @@
     </title>
 </head>
 <body>
-    <!-- cabeza de pagina -->
+    {% comment 'Informacion de la pagina'%} Proyecto en desarrollo de una pagina de ventas {% endcomment %}
+    {% comment 'Cabeza de pagina'%} Cabeza de pagina {% endcomment %}
     <header>
         <div class="logotipo">
-            <!-- Logo tipo Django -->
+            {% comment 'Logotipo' %} Logo de Django {% endcomment %}
             <img src="../static/img/logo.webp" alt="">
             <h1>Sitio web con Django | Nicolas Paulo Vega</h1>
         </div>
     </header>
-    <!-- menu de navegacion -->
+    {% comment 'menu' %} menu de navegacion {% endcomment %}
 
     <nav>
         <ul>
@@ -47,6 +48,7 @@
         </ul>
     </nav>
 
+    {% comment 'Barra 3D'%} Se crea una barra 3D para el menu {% endcomment %}
     <div class="barra">
         <span class="esquina-izquierda"></span>
         <span class="relleno-barra"></span>
@@ -56,6 +58,7 @@
         
         {% endblock %}
 
+        {% comment 'Caja'%} Se crea una caja con el contenido de la pagina original {% endcomment %}
         <div id="content">
             <div class="box">
                 {% block content %}
@@ -63,6 +66,8 @@
                 {% endblock %}
             </div>
         </div>
+
+        {% comment 'copyright' %} Derechos de autor {% endcomment %}
         <footer>Master de Framework Django &copy; Nicolas Paulo Vega</footer>
 </body>
 </html>
