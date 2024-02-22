@@ -97,7 +97,7 @@ nav ul li a:hover {
 
 .esquina-derecha {
     display: block;
-    border-right: 20px- solid transparent;
+    border-right: 20px solid transparent;
     border-top: 10px solid #2b2f30;
     float: right;
 }
@@ -119,3 +119,13 @@ nav ul li a:hover {
     margin-top: 40px; */
     margin: 40px auto 30px auto;
 }
+
+.box {
+    background-color: white;
+    width: 95%;
+    min-height: 930px;
+    padding: 20px;
+    border: 1px solid #dddd;
+    margin: 0 auto;
+}
+
