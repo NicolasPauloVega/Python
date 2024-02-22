@@ -1,3 +1,8 @@
+.strong {
+    padding: 0px;
+    
+}
+
 /*  Estilos Generales */
 *{
     margin: 0px;
@@ -127,4 +132,13 @@ nav ul li a:hover {
     padding: 20px;
     border: 1px solid #dddd;
     margin: 0 auto;
+}
+
+/* Aplicamos estilos a los titulos */
+.title {
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
