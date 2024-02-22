@@ -51,11 +51,13 @@ def index (request):
             template += f"<li>{str(year2)}</li>"
         year2 += 1
     template += """</ul><hr>"""
+    nombre = 'Nicolas Paulo Ramires'
 
     return render(request,'index.html', {
         'mi_variable': 'soy un dato que esta en la vista',
         'title': 'Inicio del sitio',
-        'titulo': 'Página de Inicio'
+        'titulo': 'Página de Inicio',
+        'name': nombre,
     })
 
 def contacto (request, nombre="", apellido=""):
