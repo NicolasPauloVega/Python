@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="../static/css/style.css"/>
     <title>
         {% block title %}
 
@@ -10,11 +11,17 @@
     </title>
 </head>
 <body>
-    <h1>Sitio web con Django | Nicolas Paulo Vega</h1>
-        </hr>
-        {% block seccion %}
-        
-        {% endblock %}
+    <!-- cabeza de pagina -->
+    <header>
+        <div class="logotipo">
+            <!-- Logo tipo Django -->
+            <h1>Sitio web con Django | Nicolas Paulo Vega</h1>
+        </div>
+    </header>
+
+    <!-- menu de navegacion -->
+
+    <nav>
         <ul>
             <li>
                 <a href="/hola_mundo">Hola Mundo</a>
@@ -38,7 +45,12 @@
                 <a href="/quienes_somos">¿Quienes somos?</a>
             </li>
         </ul>
-        <hr>
+    </nav>
+
+        {% block seccion %}
+        
+        {% endblock %}
+
         <div id="content">
             {% block content %}
 
