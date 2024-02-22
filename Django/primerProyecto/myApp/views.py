@@ -54,7 +54,8 @@ def index (request):
 
     return render(request,'index.html', {
         'mi_variable': 'soy un dato que esta en la vista',
-        'title': 'Inicio del sitio'
+        'title': 'Inicio del sitio',
+        'titulo': 'Página de Inicio'
     })
 
 def contacto (request, nombre="", apellido=""):
