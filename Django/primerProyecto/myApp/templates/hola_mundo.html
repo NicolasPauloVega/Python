@@ -10,6 +10,7 @@
 
 {% block content %}
 <h2 class="title"> Hola Mundo </h2><br>
-    <h1>Hola Mundo desde Django</h1>
-    <h2>Framework de Desarrollo para la web</h2>
+    {{block.super}}
+        <h1>Hola Mundo desde Django</h1>
+        <h2>Framework de Desarrollo para la web</h2>
 {% endblock %}

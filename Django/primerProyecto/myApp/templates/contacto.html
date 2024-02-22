@@ -10,41 +10,41 @@
 
 {% block content %}
 <h2 class="title"> Contacto </h2><br>
-    
-    <h1>Contacto</h1><br>
+    {{block.super}}
+        <h1>Contacto</h1><br>
 
-    <p>Si tienes alguna duda o inquietud porfavor dejanos tu comentario y nosotros nos encargaremos de ayudarte.</p>
-    <br><h3>Llenar porfavor el siguiente formulario.</h3>
+        <p>Si tienes alguna duda o inquietud porfavor dejanos tu comentario y nosotros nos encargaremos de ayudarte.</p>
+        <br><h3>Llenar porfavor el siguiente formulario.</h3>
 
-    <form action="">
-        <br><h3>Datos</h3>
+        <form action="">
+            <br><h3>Datos</h3>
 
-        <br><label>Nombre Completo</label><br>
-        <input type="text"><br><br>
-        
-        <br><label>Tipo de documento</label><br>
-        <select name="documento">
-            <option value="0"></option>
-            <option value="1">Cedula</option>
-            <option value="2">Tarjeta de identidad</option>
-            <option value="3">Cedula de Extranjeria</option>
-        </select><br><br>
+            <br><label>Nombre Completo</label><br>
+            <input type="text"><br><br>
+            
+            <br><label>Tipo de documento</label><br>
+            <select name="documento">
+                <option value="0"></option>
+                <option value="1">Cedula</option>
+                <option value="2">Tarjeta de identidad</option>
+                <option value="3">Cedula de Extranjeria</option>
+            </select><br><br>
 
-        <br><label>N° Documento</label><br>
-        <input type="number" min="0"><br><br>
+            <br><label>N° Documento</label><br>
+            <input type="number" min="0"><br><br>
 
-        <br><label>N° Celular</label><br>
-        <input type="number" min="0"><br><br>
+            <br><label>N° Celular</label><br>
+            <input type="number" min="0"><br><br>
 
-        <br><label>Correo Electronico</label><br>
-        <input type="text"><br><br>
+            <br><label>Correo Electronico</label><br>
+            <input type="text"><br><br>
 
-        <br><label>Comentario: </label><br>
-        <textarea name="textarea" rows="10" cols="50"></textarea>
-        <br><br>
+            <br><label>Comentario: </label><br>
+            <textarea name="textarea" rows="10" cols="50"></textarea>
+            <br><br>
 
-        <button>Borrar</button>
-        <button>Enviar</button>
-    </form>
-    <br>
+            <button>Borrar</button>
+            <button>Enviar</button>
+        </form>
+        <br>
 {% endblock %}
