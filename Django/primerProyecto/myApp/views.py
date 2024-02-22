@@ -52,7 +52,10 @@ def index (request):
         year2 += 1
     template += """</ul><hr>"""
 
-    return render(request,'index.html')
+    return render(request,'index.html', {
+        'mi_variable': 'soy un dato que esta en la vista',
+        'title': 'Inicio del sitio'
+    })
 
 def contacto (request, nombre="", apellido=""):
     aprendiz=""
