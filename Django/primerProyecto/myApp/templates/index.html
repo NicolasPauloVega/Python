@@ -22,11 +22,12 @@
             <strong>Nombre no existe</strong>
         {% endif %}
 
+        {% comment 'Bucle For'%} Se crea un bucle de la misma manera que se crea una condicional y se llama a la variable correspondiente {% endcomment %}
         <p>
             {% for prueba in list%}
                 <li>{{prueba}}</li>
             {% endfor %}
         </p>
-        
+
         <p>Años desde el 2024 hasta 2050</p>
 {% endblock %}

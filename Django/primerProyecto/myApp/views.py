@@ -59,7 +59,7 @@ def index (request):
         'title': 'Inicio del sitio',
         'titulo': 'Página de Inicio',
         'name': nombre,
-        'list': ["Nicolas P.", "Juan Carlo P.", "Sara V."],
+        'list': ["Nicolas P.", "Juan Carlo P.", "Sara V.", "Maria Alejandra R."],
     })
 
 def contacto (request, nombre="", apellido=""):
