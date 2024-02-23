@@ -7,9 +7,10 @@ def hola_mundo (request):
 
 
 def saludo (request, redirigir=0):
+    nombres = ['Nicolas', 'Andres']
     if redirigir == 1:
         return redirect('contacto', nombre="Ana", apellido="Cruz")
-    return render(request, 'saludo.html')
+    return render(request, 'saludo.html', {'texto': '', 'names': ['Nicolas','Andres']})
 
 def presentacion (request):
     return render(request, 'presentacion.html')
