@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+
+{% block seccion %}
+    {% comment 'inicio' %} <strong>Ejercicios</strong> {% endcomment %}
+{% endblock %}
+
+{% block title %}
+    Ejercicios
+{% endblock %}
+
+{% block content %}
+    <h2>Ejemplos de bucles</h2><br>
+    
+    {% comment 'Bucle For'%} Se crea un bucle de la misma manera que se crea una condicional y se llama a la variable correspondiente {% endcomment %}
+
+    <strong>Lista de nombres: </strong><br>
+
+    <ul>
+        <p>
+            {% for prueba in list%}
+                <li>{{prueba}}</li>
+                {% empty %}
+                    <p>No hay datos para mostrar</p>
+            {% endfor %}
+        </p><br>
+    </ul>
+
+    <strong>Numeros del 1 al 10: </strong><br>
+
+    <ul>
+        <p>
+            {% for number in numeros %}
+                <li>{{number}}</li>
+            {% endfor %}
+        </p><br>
+    </ul>
+
+    <strong>Lista vacia: </strong>
+
+    <ul>
+        <p>
+            {% for nombre in nombres %}
+                <li>{{nombre}}</li>
+                {% empty %}
+                    <p>No hayelementos</p>
+            {% endfor %}
+        </p><br>
+    </ul>
+
+    <strong>Primer nombre de la lista (True): </strong><br>
+
+    <ul>
+        <p>
+            {% for prueba in list %}
+                <li>{{prueba}} ({{forloop.first}})</li>
+                {% empty %}
+                    <p>No hayelementos</p>
+            {% endfor %}
+        </p><br>
+    </ul>
+
+    <strong>Ultimo nombre de la lista (True): </strong><br>
+
+    <ul>
+        <p>
+            {% for prueba in list %}
+                <li>{{prueba}} ({{forloop.last}})</li>
+                {% empty %}
+                    <p>No hayelementos</p>
+            {% endfor %}
+        </p><br>
+    </ul>
+
+    <strong>Contar los nombres: </strong><br>
+
+    <ul>
+        <p>
+            {% for prueba in list %}
+                <li>{{prueba}} ({{forloop.counter}})</li>
+                {% empty %}
+                    <p>No hayelementos</p>
+            {% endfor %}
+        </p><br>
+    </ul>
+
+    <strong>Contar los numeros en reversa: </strong><br>
+
+    <ul>
+        <p>
+            {% for prueba in list %}
+                <li>{{prueba}} ({{forloop.revcounter}})</li>
+                {% empty %}
+                    <p>No hayelementos</p>
+            {% endfor %}
+        </p><br>
+    </ul>
+
+{% endblock %}

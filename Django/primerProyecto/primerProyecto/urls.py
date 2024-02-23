@@ -30,4 +30,5 @@ urlpatterns = [
     path('contacto/<str:nombre>/<str:apellido>', myApp.views.contacto, name="contacto"),
     path('productos_servicios/', myApp.views.productos_servicios, name= "productos y servicios"),
     path('quienes_somos/', myApp.views.quienes_somos, name="quienes somos"),
+    path('ejemplos/', myApp.views.ejemplos, name="ejemplos"),
 ]

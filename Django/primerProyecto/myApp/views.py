@@ -16,41 +16,45 @@ def presentacion (request):
 
 def index (request):
     #Se crea una variable que almacene la informacion que se quiere poner en la pagina.
-    template = """
-                    <h1>Inicio</h1>
-                    <p>Años desde el 2024 hasta 2050</p>
-                     <ul>
-                 """
-    #Se crea una variable que almacene el año 2024
-    year=2024
-    #se crea una lista a cual se actualizara cada vez que se entre
-    while year <= 2050:
-        template += f"<li> {str(year)} </li>"
-        year += 1
-    template += """</ul><hr>"""
+    # """template = ""
+    #                 <h1>Inicio</h1>
+    #                 <p>Años desde el 2024 hasta 2050</p>
+    #                  <ul>
+    #              """
+    # #Se crea una variable que almacene el año 2024
+    # year=2024
+    # #se crea una lista a cual se actualizara cada vez que se entre
+    # while year <= 2050:
+    #     template += f"<li> {str(year)} </li>"
+    #     year += 1
+    # template += """</ul><hr>"""
 
     
-    template += """
-                    <h1>Años biciestos</h1>
-                    <ul>
-                """
-    year1 = 2024
-    while year1 <= 2050:
-        if year1 % 4 == 0:
-            template += f"<li>{str(year1)}</li>"
-        year1 += 1
-    template += """</ul><hr>"""
+    # template += """
+    #                 <h1>Años biciestos</h1>
+    #                 <ul>
+    #             """
+    # year1 = 2024
+    # while year1 <= 2050:
+    #     if year1 % 4 == 0:
+    #         template += f"<li>{str(year1)}</li>"
+    #     year1 += 1
+    # template += """</ul><hr>"""
 
-    template += """
-                <h1>Años pares</h1>
-                <ul>
-                """
-    year2 = 2024
-    while year2 <= 2050:
-        if year2 % 2 == 0:
-            template += f"<li>{str(year2)}</li>"
-        year2 += 1
-    template += """</ul><hr>"""
+    # template += """
+    #             <h1>Años pares</h1>
+    #             <ul>
+    #             """
+    # year2 = 2024
+    # while year2 <= 2050:
+    #     if year2 % 2 == 0:
+    #         template += f"<li>{str(year2)}</li>"
+    #     year2 += 1
+    # template += """</ul><hr>"""
+
+    year = 2024
+    hasta = range(year,2051)
+
     nombre = 'Nicolas Paulo Ramires'
     # lista = ["Nicolas P.", "Juan Carlo P.", "Sara V."]
 
@@ -59,8 +63,7 @@ def index (request):
         'title': 'Inicio del sitio',
         'titulo': 'Página de Inicio',
         'name': nombre,
-        'list': ["Nicolas P.", "Juan Carlo P.", "Sara V.", "Maria Alejandra R."],
-        'numeros': range(1,11),
+        'years': hasta,
     })
 
 def contacto (request, nombre="", apellido=""):
@@ -82,3 +85,11 @@ def quienes_somos(request):
 
 def productos_servicios(request):
     return render(request, 'pys.html')
+
+def ejemplos(request):
+    nombres = []
+    return render(request, 'ejemplos.html', {
+        'list': ["Nicolas P.", "Juan Carlo P.", "Sara V.", "Maria Alejandra R."],
+        'numeros': range(1,11),
+        'nombres': nombres,
+    })

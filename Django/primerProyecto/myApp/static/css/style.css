@@ -160,3 +160,13 @@ p{
     margin-top: 5px;
     margin-bottom: 10px;
 }
+
+.box p,h2,h3,.box ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.box ul li{
+    margin-left: 40px;
+    line-height: 40px;
+}
