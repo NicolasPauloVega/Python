@@ -20,19 +20,6 @@
             <p>{{name}}</p>
         {% else %}
             <strong>Nombre no existe</strong>
-        {% endif %}<br>
-
-        <br><p><strong>Años desde el 2024 hasta 2050</strong></p>
-
-        {% comment 'Numeros Divisibles' %} Se cera un bucle el cual cumplira una funcion para poder ejecutarse, divisibleby es un filtro que nos permite encontrar los numeros pares. {% endcomment %}
-
-        <ul>
-            {% for year in years%}
-                {% if year|divisibleby:2 != 0 %}
-                    <li>{{year}}</li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    
-{% include 'fecha_actual.html' %}
+        {% endif %}<br>    
+{% include 'fecha_actual.html' with saludo='Hola desde la plantilla' %}
 {% endblock %}

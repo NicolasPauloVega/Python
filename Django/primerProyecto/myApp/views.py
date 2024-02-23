@@ -55,7 +55,7 @@ def index (request):
     year = 2024
     hasta = range(year,2051)
 
-    nombre = 'Nicolas Paulo Ramires'
+    nombre = 'Nicolas Paulo Vega'
     # lista = ["Nicolas P.", "Juan Carlo P.", "Sara V."]
 
     return render(request,'index.html', {

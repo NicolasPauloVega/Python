@@ -20,15 +20,15 @@ import myApp.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hola_mundo/', myApp.views.hola_mundo, name="Hola Mundo"),
-    path('saludo/', myApp.views.saludo, name="Saludo"),
-    path('saludo/<int:redirigir>', myApp.views.saludo, name="Saludo"),
-    path('presentacion/', myApp.views.presentacion, name="Presentacion"),
+    path('hola_mundo/', myApp.views.hola_mundo, name="hola_mundo"),
+    path('saludo/', myApp.views.saludo, name="saludo"),
+    path('saludo/<int:redirigir>', myApp.views.saludo, name="saludo"),
+    path('presentacion/', myApp.views.presentacion, name="presentacion"),
     path('', myApp.views.index, name="index"),
     path('contacto/', myApp.views.contacto, name="contacto"),
     path('contacto/<str:nombre>', myApp.views.contacto, name="contacto"),
     path('contacto/<str:nombre>/<str:apellido>', myApp.views.contacto, name="contacto"),
-    path('productos_servicios/', myApp.views.productos_servicios, name= "productos y servicios"),
-    path('quienes_somos/', myApp.views.quienes_somos, name="quienes somos"),
+    path('productos_servicios/', myApp.views.productos_servicios, name= "productos_y_servicios"),
+    path('quienes_somos/', myApp.views.quienes_somos, name="quienes_somos"),
     path('ejemplos/', myApp.views.ejemplos, name="ejemplos"),
 ]
