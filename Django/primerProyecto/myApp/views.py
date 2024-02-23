@@ -10,7 +10,7 @@ def saludo (request, redirigir=0):
     nombres = ['Nicolas', 'Andres']
     if redirigir == 1:
         return redirect('contacto', nombre="Ana", apellido="Cruz")
-    return render(request, 'saludo.html', {'texto': '', 'names': ['Nicolas','Andres']})
+    return render(request, 'saludo.html', {'texto': '', 'names': nombres})
 
 def presentacion (request):
     return render(request, 'presentacion.html')
