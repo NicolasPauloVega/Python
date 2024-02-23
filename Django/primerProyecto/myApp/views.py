@@ -60,6 +60,7 @@ def index (request):
         'titulo': 'Página de Inicio',
         'name': nombre,
         'list': ["Nicolas P.", "Juan Carlo P.", "Sara V.", "Maria Alejandra R."],
+        'numeros': range(1,11),
     })
 
 def contacto (request, nombre="", apellido=""):
