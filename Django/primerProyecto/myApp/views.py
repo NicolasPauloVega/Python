@@ -52,14 +52,14 @@ def index (request):
         year2 += 1
     template += """</ul><hr>"""
     nombre = 'Nicolas Paulo Ramires'
-    lista = ["Nicolas P.", "Juan Carlo P.", "Sara V."]
+    # lista = ["Nicolas P.", "Juan Carlo P.", "Sara V."]
 
     return render(request,'index.html', {
         'mi_variable': 'soy un dato que esta en la vista',
         'title': 'Inicio del sitio',
         'titulo': 'Página de Inicio',
         'name': nombre,
-        'list': lista,
+        'list': ["Nicolas P.", "Juan Carlo P.", "Sara V."],
     })
 
 def contacto (request, nombre="", apellido=""):
