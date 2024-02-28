@@ -90,7 +90,12 @@ def productos_servicios(request):
 def ejemplos(request):
     nombres = []
     return render(request, 'ejemplos.html', {
-        'list': ["Nicolas P.", "Juan Carlo P.", "Sara V.", "Maria Alejandra R."],
+        'lista': ["Nicolas P.", "Juan Carlo P.", "Sara V.", "Maria Alejandra R."],
         'numeros': range(1,11),
         'nombres': nombres,
+        'value': [1,2,3],
+        'correoE': "nicolas. paulo. vega. 06 @ gmail. com",
+        'divisible':30,
+        'letras':"Hola mundo!!",
+        'aprendices': ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Nicolas Paulo","Miguel Angel","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly"],
     })
