@@ -1,21 +1,36 @@
+# Importando las funciones render, HttpResponse y redirect
 from django.shortcuts import render, HttpResponse, redirect
+
+# Importando el modelo Article desde la aplicación myApp
 from myApp.models import Article
 
 # Create your views here.
 
-def hola_mundo (request):
+# Definiendo la vista 'hola_mundo'
+def hola_mundo(request):
+    # Renderiza la plantilla 'hola_mundo.html' y la retorna como respuesta
     return render(request, 'hola_mundo.html')
 
 
-def saludo (request, redirigir=0):
+# Definiendo la vista 'saludo'
+def saludo(request, redirigir=0):
+    # Lista de nombres
     nombres = ['Nicolas', 'Andres']
+    
+    # Verificando si se debe redirigir a la vista 'contacto'
     if redirigir == 1:
+        # Redirigiendo a la vista 'contacto' con los parámetros especificados
         return redirect('contacto', nombre="Ana", apellido="Cruz")
+    
+    # Si no se debe redirigir, renderiza la plantilla 'saludo.html' con los nombres
     return render(request, 'saludo.html', {'texto': '', 'names': nombres})
 
-def presentacion (request):
+# Definiendo la vista 'presentacion'
+def presentacion(request):
+    # Renderiza la plantilla 'presentacion.html' y la retorna como respuesta
     return render(request, 'presentacion.html')
 
+# Definiendo la vista 'index'
 def index (request):
     #Se crea una variable que almacene la informacion que se quiere poner en la pagina.
     # """template = ""
@@ -54,13 +69,15 @@ def index (request):
     #     year2 += 1
     # template += """</ul><hr>"""
 
+    # Se define una lista de años desde 2024 hasta 2050
     year = 2024
     hasta = range(year,2051)
 
+    # Se define un nombre
     nombre = 'Nicolas Paulo Vega'
-    # lista = ["Nicolas P.", "Juan Carlo P.", "Sara V."]
 
-    return render(request,'index.html', {
+    # Se pasan los datos a la plantilla 'index.html'
+    return render(request, 'index.html', {
         'mi_variable': 'soy un dato que esta en la vista',
         'title': 'Inicio del sitio',
         'titulo': 'Página de Inicio',
@@ -68,44 +85,92 @@ def index (request):
         'years': hasta,
     })
 
-def contacto (request, nombre="", apellido=""):
-    aprendiz=""
+
+# Definiendo la vista 'contacto'
+def contacto(request, nombre="", apellido=""):
+    # Inicializando una cadena vacía para almacenar información del aprendiz
+    aprendiz = ""
+    
+    # Comprobando si se proporcionaron valores para nombre y apellido
     if nombre and apellido:
-        aprendiz+=f"<h3>{nombre} {apellido}</h3>"
+        # Si se proporcionaron ambos, se agrega un encabezado con ambos nombres
+        aprendiz += f"<h3>{nombre} {apellido}</h3>"
     elif nombre:
+        # Si solo se proporcionó el nombre, se agrega un encabezado con el nombre solamente
         aprendiz += f"<h2>Nombre: {nombre}</h2>"
     elif apellido:
+        # Si solo se proporcionó el apellido, se agrega un encabezado con el apellido solamente
         aprendiz += f"<h2>Apellido: {apellido}</h2>"
     else:
+        # Si no se proporcionaron ni nombre ni apellido, se muestra un mensaje indicando su ausencia
         aprendiz += f"<h2>Nombre y Apellido inexistente</h2>"
 
+    # Retorna la plantilla 'contacto.html', pasando la información del aprendiz
     return render(request, 'contacto.html')
 
 
+# Definiendo la vista 'quienes_somos'
 def quienes_somos(request):
+    # Renderiza la plantilla 'qs.html' y la retorna como respuesta
     return render(request, 'qs.html')
 
+# Definiendo la vista 'productos_servicios'
 def productos_servicios(request):
+    # Renderizando la plantilla 'pys.html'
     return render(request, 'pys.html')
 
+# Definiendo la vista 'ejemplos'
 def ejemplos(request):
+    # Creando una lista vacía llamada 'nombres'
     nombres = []
+    
+    # Retornando la plantilla 'ejemplos.html' con diferentes datos
     return render(request, 'ejemplos.html', {
+        # Lista de nombres
         'lista': ["Nicolas P.", "Juan Carlo P.","2", "Sara V.", "Maria Alejandra R."],
-        'numeros': range(1,11),
+        # Rango de números del 1 al 10
+        'numeros': range(1, 11),
+        # Lista vacía 'nombres'
         'nombres': nombres,
-        'value': [1,2,3],
+        # Lista de valores [1, 2, 3]
+        'value': [1, 2, 3],
+        # Dirección de correo electrónico
         'correoE': "nicolas. paulo. vega. 06 @ gmail. com",
-        'divisible':30,
-        'letras':"Hola mundo!!",
+        # Número divisible
+        'divisible': 30,
+        # Cadena de caracteres
+        'letras': "Hola mundo!!",
+        # Lista de nombres de aprendices
         'aprendices': ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Nicolas Paulo","Miguel Angel","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly"],
     })
 
+# Definiendo la vista 'crear_articulo'
 def crear_articulo(request, title, content, public):
+    # Crear una instancia de Article con los datos proporcionados
     articulo = Article(
-        title = title,
-        content = content,
-        public = public,
+        title=title,
+        content=content,
+        public=public,
     )
+    # Guardar el artículo en la base de datos
     articulo.save()
+    
+    # Retornar una respuesta con los detalles del artículo creado
     return HttpResponse(f"Aticulo creado: {articulo.title} - {articulo.content}")
+
+# Definiendo la vista 'articulo'
+def articulo(request):
+    try:
+        # Intenta obtener un artículo con unos parametros desde la base de datos
+        articulo = Article.objects.get(pk=4, public=False)
+        
+        # Si se encuentra el artículo, construye una respuesta con los detalles del artículo
+        response = f"Articulo creado: {articulo.title} - {articulo.content} - Estado:{articulo.public}"
+    
+    except:
+        # Si hay una excepción (por ejemplo, si no se encuentra el artículo), construye una respuesta de error
+        response = "<h1><strong>Articulo no encontrado</strong></h1>"
+
+    # Retorna la respuesta, ya sea los detalles del artículo o un mensaje de error
+    return HttpResponse(response)
+

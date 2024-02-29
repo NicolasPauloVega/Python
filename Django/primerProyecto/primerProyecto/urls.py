@@ -19,7 +19,10 @@ from django.urls import path
 import myApp.views
 
 urlpatterns = [
+    # URL para acceder al panel de administración de Django
     path('admin/', admin.site.urls),
+    
+    # URLs para las diferentes vistas definidas en myApp.views
     path('hola_mundo/', myApp.views.hola_mundo, name="hola_mundo"),
     path('saludo/', myApp.views.saludo, name="saludo"),
     path('saludo/<int:redirigir>', myApp.views.saludo, name="saludo"),
@@ -33,4 +36,5 @@ urlpatterns = [
     path('ejemplos/', myApp.views.ejemplos, name="ejemplos"),
     path('crear_articulo/', myApp.views.crear_articulo, name="crear_articulo"),
     path('crear_articulo/<str:title>/<str:content>/<str:public>', myApp.views.crear_articulo, name="crear_articulo"),
+    path('articulo/', myApp.views.articulo, name="articulo")
 ]
