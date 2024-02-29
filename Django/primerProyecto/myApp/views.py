@@ -1,7 +1,4 @@
-# Importando las funciones render, HttpResponse y redirect
 from django.shortcuts import render, HttpResponse, redirect
-
-# Importando el modelo Article desde la aplicación myApp
 from myApp.models import Article
 
 # Create your views here.
@@ -174,3 +171,26 @@ def articulo(request):
     # Retorna la respuesta, ya sea los detalles del artículo o un mensaje de error
     return HttpResponse(response)
 
+#Definiendo la vista 'editar_articulo'
+def editar_articulo(request,id):
+    #Intenta obtener un articulo basado en unos parametros desde la base de datos
+    articulo= Article.objects.get(pk=id)
+    #se actualizan los datos de title,content y public
+    articulo.title="El principito"
+    articulo.content="Cuento de planetas"
+    articulo.public=False
+    #se guardan los cambios
+    articulo.save()
+    #se muestra en la pantalla
+    return HttpResponse(f"El articulo {articulo.id} de nombre: {articulo.title} ha sido actualizado, su descripcion es: {articulo.content} y su estado es: {articulo.public}")
+
+#Definiendo la vista 'articulos'
+def articulos(request):
+    #guardar todos los objetos (registros) de article.
+    articulos = Article.objects.all()
+    #Enviando la informacion a el template articulos
+    return render(request, 'articulos.html',{
+        'articulos':articulos
+    })
+
+    return HttpResponse()
