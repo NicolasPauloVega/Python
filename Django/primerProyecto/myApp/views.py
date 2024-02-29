@@ -101,11 +101,11 @@ def ejemplos(request):
         'aprendices': ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Nicolas Paulo","Miguel Angel","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly"],
     })
 
-def crear_articulo(request):
+def crear_articulo(request, title, content, public):
     articulo = Article(
-        title = "Analisis y desarrollo de sotware",
-        content = "Tecnologo en la Industria del software",
-        public = True,
+        title = title,
+        content = content,
+        public = public,
     )
     articulo.save()
-    return HttpResponse("Aticulo creado: ")
+    return HttpResponse(f"Aticulo creado: {articulo.title} - {articulo.content}")

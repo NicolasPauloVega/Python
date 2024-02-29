@@ -32,4 +32,5 @@ urlpatterns = [
     path('quienes_somos/', myApp.views.quienes_somos, name="quienes_somos"),
     path('ejemplos/', myApp.views.ejemplos, name="ejemplos"),
     path('crear_articulo/', myApp.views.crear_articulo, name="crear_articulo"),
+    path('crear_articulo/<str:title>/<str:content>/<str:public>', myApp.views.crear_articulo, name="crear_articulo"),
 ]
