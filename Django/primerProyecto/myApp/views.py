@@ -99,3 +99,6 @@ def ejemplos(request):
         'letras':"Hola mundo!!",
         'aprendices': ["Juan Diego","Mathew Guarnizo","Maria Fernanda","Nicolas Paulo","Miguel Angel","Maicol Esteban","Kevin Londoño","Marlon","Maria Jose","Nataly"],
     })
+
+def crear_articulo(request):
+    return HttpResponse("Aticulo creado: ")

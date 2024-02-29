@@ -31,4 +31,5 @@ urlpatterns = [
     path('productos_servicios/', myApp.views.productos_servicios, name= "productos_y_servicios"),
     path('quienes_somos/', myApp.views.quienes_somos, name="quienes_somos"),
     path('ejemplos/', myApp.views.ejemplos, name="ejemplos"),
+    path('crear_articulo/', myApp.views.crear_articulo, name="crear_articulo"),
 ]
