@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from myApp.models import Article
 
 # Create your views here.
 
@@ -101,4 +102,10 @@ def ejemplos(request):
     })
 
 def crear_articulo(request):
+    articulo = Article(
+        title = "Analisis y desarrollo de sotware",
+        content = "Tecnologo en la Industria del software",
+        public = True,
+    )
+    articulo.save()
     return HttpResponse("Aticulo creado: ")
