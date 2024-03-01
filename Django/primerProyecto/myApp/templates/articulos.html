@@ -7,7 +7,7 @@
 {% block content %}
 <div class="lista_datos">
     <h2 class="title">Lista de Articulos de mi blog</h2>
-    <ul style="list-style: none;">
+    <ul>
     {% for article in articulos%}
         <li>
             <strong>ID: </strong> {{article.id}} <br> <strong>Titulo: </strong> {{article.title}} <br> <strong>Contenido: </strong> {{article.content}} <br> <strong>Estado: </strong> {{article.public}}
