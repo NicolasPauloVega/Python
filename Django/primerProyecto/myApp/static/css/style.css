@@ -171,10 +171,39 @@ p{
     line-height: 40px;
 }
 
-.lista_datos ul li{
-    list-style: none;
+
+.lista_datos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.lista_datos ul li strong{
+.tabla_articulos {
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tabla_articulos thead tr{
+    background-color: #00a6ff;
+    color: #ffffff;
+    text-align: middle;
+}
+
+.tabla_articulos th,
+.tabla_articulos td {
+    border: 1px solid #dddddd;
+    padding: 12px 15px ;
+    text-align: left;
+}
+
+.title-articulos{
     color: red;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
 }

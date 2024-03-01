@@ -187,10 +187,8 @@ def editar_articulo(request,id):
 #Definiendo la vista 'articulos'
 def articulos(request):
     #guardar todos los objetos (registros) de article.
-    articulos = Article.objects.order_by('id')[:3]
+    articulos = Article.objects.order_by('id')[:4]
     #Enviando la informacion a el template articulos
     return render(request, 'articulos.html',{
         'articulos':articulos
     })
-
-    return HttpResponse()

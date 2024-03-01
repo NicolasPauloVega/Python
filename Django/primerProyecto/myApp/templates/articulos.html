@@ -5,15 +5,27 @@
 {% endblock %}
 
 {% block content %}
+<h2 class="title-articulos"><strong>Lista de articulos</strong></h2>
 <div class="lista_datos">
-    <h2 class="title">Lista de Articulos de mi blog</h2>
-    <ul>
-    {% for article in articulos%}
-        <li>
-            <strong>ID: </strong> {{article.id}} <br> <strong>Titulo: </strong> {{article.title}} <br> <strong>Contenido: </strong> {{article.content}} <br> <strong>Estado: </strong> {{article.public}}
-        </li>
-        <hr>
-    {% endfor %}
-    </ul>
+    <table class="tabla_articulos">
+        <thead>
+            <tr>
+                <th>ID </th>
+                <th>Titulo </th>
+                <th>Contenido </th>
+                <th>Estado </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articulos %}
+                <tr>
+                    <td>{{article.id}}</td>
+                    <td>{{article.title}}</td>
+                    <td>{{article.content}}</td>
+                    <td>{{article.public}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}
