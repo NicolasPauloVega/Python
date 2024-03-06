@@ -196,4 +196,4 @@ def articulos(request):
 def borrar_articulo(request, id):
     articulo = Article.objects.get(pk=id)
     articulo.delete()
-    return redirect('articulos')
+    return redirect('Listar')
