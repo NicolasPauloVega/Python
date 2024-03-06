@@ -188,15 +188,6 @@ def editar_articulo(request,id):
 def articulos(request):
     #guardar todos los objetos (registros) de article.
     articulos = Article.objects.order_by('id')
-    articulos = Article.objects.filter(public = True, id=1)
-    #Lookups en Django
-    articulos = Article.objects.filter(title__contains = "media") #Búsqueda de artículos cuyo título contiene la palabra "media" de forma case-sensitive.
-    articulos = Article.objects.filter(title__exact = "Divina comedia") #Búsqueda de artículos cuyo título es exactamente "Divina comedia".
-    articulos = Article.objects.filter(title__iexact = "divina comedia") #Búsqueda de artículos cuyo título es exactamente "divina comedia", ignorando mayúsculas y minúsculas.
-    articulos = Article.objects.filter(id__gte=1) #Búsqueda de artículos cuyo ID es mayor o igual a 1.
-    articulos = Article.objects.filter(id__lt=5) #Búsqueda de artículos cuyo ID es menor que 5.
-    articulos = Article.objects.filter(id__in=[1,3,6]) #Búsqueda de artículos cuyos IDs están en la lista [1, 6, 8].
-    articulo = Article.objects.filter()
     #Enviando la informacion a el template articulos
     return render(request, 'articulos.html',{
         'articulos':articulos
@@ -205,4 +196,12 @@ def articulos(request):
 def borrar_articulo(request, id):
     articulo = Article.objects.get(pk=id)
     articulo.delete()
+    return redirect('Listar')
+
+def eliminar_articulo(request,id):
+    articulos = Article.objects.raw("delete from myApp_article where id = {id}")
+    return redirect('Listar')
+
+def actualizar_articulo(request, id):
+    articulos = Article.objects.raw("update myApp_article set content='Desarrollo de aplicaciones y paginas web' where id = {%articulo.id%}")
     return redirect('Listar')

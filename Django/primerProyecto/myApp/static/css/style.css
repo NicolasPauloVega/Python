@@ -223,7 +223,7 @@ p{
 }
 
 .lista_datos .boton-actualizar{
-    background-color: red;
+    background-color: greenyellow;
     padding: 5px;
     font-weight: 700;
     border: solid black;
@@ -233,4 +233,12 @@ p{
 .lista_datos .boton-actualizar a{
     text-decoration: none;
     color: white;
+}
+
+.lista_datos .estado-publico{
+    color: blue;
+}
+
+.lista_datos .estado-privado{
+    color: orangered;
 }
