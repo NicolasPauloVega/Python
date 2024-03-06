@@ -198,7 +198,7 @@ p{
 .tabla_articulos td {
     border: 1px solid #dddddd;
     padding: 12px 15px ;
-    text-align: left;
+    text-align: center;
 }
 
 .title-articulos{
@@ -221,7 +221,7 @@ p{
     color: white;
 }
 
-.lista_datos .boton-agregar{
+.lista_datos .boton-actualizar{
     background-color: red;
     padding: 5px;
     font-weight: 700;
@@ -229,7 +229,7 @@ p{
     border-radius: 5px;
 }
 
-.lista_datos .boton-agregar a{
+.lista_datos .boton-actualizar a{
     text-decoration: none;
     color: white;
 }

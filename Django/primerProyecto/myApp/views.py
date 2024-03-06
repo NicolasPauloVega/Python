@@ -187,7 +187,12 @@ def editar_articulo(request,id):
 #Definiendo la vista 'articulos'
 def articulos(request):
     #guardar todos los objetos (registros) de article.
-    articulos = Article.objects.order_by('id')
+    # articulos = Article.objects.order_by('id')
+    # articulos = Article.objects.filter(public = True, id=1)
+    #Lookups en Django
+    articulos = Article.objects.filter(title__contains = "media")
+    articulos = Article.objects.filter(title__exact = "Divina comedia")
+    articulos = Article.objects.filter(title__iexact = "divina comedia")
     #Enviando la informacion a el template articulos
     return render(request, 'articulos.html',{
         'articulos':articulos

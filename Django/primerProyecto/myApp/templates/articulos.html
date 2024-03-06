@@ -5,7 +5,6 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <script src="https://kit.fontawesome.com/93981ca0bd.js" crossorigin="anonymous"></script>
             <title> 
                 {% block title %}
                     Lista de Articulos
@@ -35,7 +34,7 @@
                                 <td>{{article.public}}</td>
                                 <td>
                                     <button class="boton-eliminar"><a href="{% url 'eliminar_articulo' article.id%}">Eliminar</a></button>
-                                    <button class="boton-agregar"><a href="">Agregar</a></button>
+                                    <button class="boton-actualizar"><a href="">Actualizar</a></button>
                                 </td>
                             </tr>
                         {% endfor %}
