@@ -39,4 +39,5 @@ urlpatterns = [
     path('articulo/', myApp.views.articulo, name="articulo"),
     path('editar_articulo/<int:id>', myApp.views.editar_articulo, name="editar_articulo"),
     path('articulos/', myApp.views.articulos, name="Listar"),
+    path('borrar_articulos/<int:id>', myApp.views.borrar_articulo, name="eliminar_articulo"),
 ]

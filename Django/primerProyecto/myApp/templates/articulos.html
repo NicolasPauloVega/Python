@@ -14,6 +14,7 @@
                 <th>Titulo </th>
                 <th>Contenido </th>
                 <th>Estado </th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                     <td>{{article.title}}</td>
                     <td>{{article.content}}</td>
                     <td>{{article.public}}</td>
+                    <td><button class="boton-eliminar"><a href="{% url 'eliminar_articulo' article.id%}">Eliminar</a></button></td>
                 </tr>
             {% endfor %}
         </tbody>
