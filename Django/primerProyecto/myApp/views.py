@@ -187,12 +187,15 @@ def editar_articulo(request,id):
 #Definiendo la vista 'articulos'
 def articulos(request):
     #guardar todos los objetos (registros) de article.
-    # articulos = Article.objects.order_by('id')
-    # articulos = Article.objects.filter(public = True, id=1)
+    articulos = Article.objects.order_by('id')
+    articulos = Article.objects.filter(public = True, id=1)
     #Lookups en Django
-    articulos = Article.objects.filter(title__contains = "media")
-    articulos = Article.objects.filter(title__exact = "Divina comedia")
-    articulos = Article.objects.filter(title__iexact = "divina comedia")
+    articulos = Article.objects.filter(title__contains = "media") #Búsqueda de artículos cuyo título contiene la palabra "media" de forma case-sensitive.
+    articulos = Article.objects.filter(title__exact = "Divina comedia") #Búsqueda de artículos cuyo título es exactamente "Divina comedia".
+    articulos = Article.objects.filter(title__iexact = "divina comedia") #Búsqueda de artículos cuyo título es exactamente "divina comedia", ignorando mayúsculas y minúsculas.
+    articulos = Article.objects.filter(id__gte=1) #Búsqueda de artículos cuyo ID es mayor o igual a 1.
+    articulos = Article.objects.filter(id__lt=5) #Búsqueda de artículos cuyo ID es menor que 5.
+    articulos = Article.objects.filter(id__in=[1,6,8])
     #Enviando la informacion a el template articulos
     return render(request, 'articulos.html',{
         'articulos':articulos
