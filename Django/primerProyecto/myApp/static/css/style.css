@@ -32,6 +32,7 @@ header {
     /* text-transform: uppercase; */
     font-weight: lighter;
     color: #42a096;
+    padding: 30px;
 }
 
 .logotipo img {
