@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from myApp.models import Article
+# Importamos la clase 'connection' de Django para interactuar directamente con la base de datos
+from django.db import connection
 
 # Create your views here.
 
@@ -198,9 +200,16 @@ def borrar_articulo(request, id):
     articulo.delete()
     return redirect('Listar')
 
-def eliminar_articulo(request,id):
-    articulos = Article.objects.raw("delete from myApp_article where id = {id}")
+# Definimos una funcion la cual se encargara de eliminar los datos de una tabla tomando el id de la base de datos
+def eliminar_articulo(request, id):
+    # utilizamos connection.cursor() para conectar directamente con la base de datos y poder ejecutar consultas asignando una variable a este mismo
+    with connection.cursor() as eliminar:
+        # Realizamos una consulta en este caso con delete utilizando el execute y el nombre de la variable
+        eliminar.execute("delete from myApp_article where id = %s", [id])
+    
+    # Se redirige al usuario a Listar y lo muestra en la pagina
     return redirect('Listar')
+
 
 def actualizar_articulo(request, id):
     articulos = Article.objects.raw("update myApp_article set content='Desarrollo de aplicaciones y paginas web' where id = {%articulo.id%}")

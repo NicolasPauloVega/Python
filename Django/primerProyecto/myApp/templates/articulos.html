@@ -31,8 +31,7 @@
                                 {% endif %}
                             </td>
                             <td>
-                                <button class="boton-eliminar"><i class="fa-solid fa-trash"></i><a href="{% url 'eliminar_articulo' article.id%}"></a></button>
-                                <button class="boton-actualizar"><a href=""><i class="fa-solid fa-pen-to-square"></i></a></button>
+                                <button class="boton-eliminar"><a href="{% url "eliminar_articulo" article.id %}"><i class="fa-solid fa-trash"></i></a></button>
                             </td>
                         </tr>
                     {% endfor %}
