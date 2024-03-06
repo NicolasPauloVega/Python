@@ -195,7 +195,7 @@ def articulos(request):
     articulos = Article.objects.filter(title__iexact = "divina comedia") #Búsqueda de artículos cuyo título es exactamente "divina comedia", ignorando mayúsculas y minúsculas.
     articulos = Article.objects.filter(id__gte=1) #Búsqueda de artículos cuyo ID es mayor o igual a 1.
     articulos = Article.objects.filter(id__lt=5) #Búsqueda de artículos cuyo ID es menor que 5.
-    articulos = Article.objects.filter(id__in=[1,6,8])
+    articulos = Article.objects.filter(id__in=[1,6,8]) #Búsqueda de artículos cuyos IDs están en la lista [1, 6, 8].
     #Enviando la informacion a el template articulos
     return render(request, 'articulos.html',{
         'articulos':articulos
