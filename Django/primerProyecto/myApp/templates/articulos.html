@@ -1,53 +1,43 @@
 {% extends 'layout.html' %}
 
-<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title> 
-                {% block title %}
-                    Lista de Articulos
-                {% endblock %}
-            </title>
-        </head>
-        <body>
-            {% block content %}
-            <h2 class="title-articulos"><strong>Lista de articulos</strong></h2>
-            <div class="lista_datos">
-                <table class="tabla_articulos">
-                    <thead>
+{% block title %}
+    Lista de Articulos
+{% endblock %}
+
+{% block content %}
+    <h2 class="title-articulos"><strong>Lista de articulos</strong></h2>
+        <div class="lista_datos">
+            <table class="tabla_articulos">
+                <thead>
+                    <tr>
+                        <th>ID </th>
+                        <th>Titulo </th>
+                        <th>Contenido </th>
+                        <th>Estado </th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for article in articulos %}
                         <tr>
-                            <th>ID </th>
-                            <th>Titulo </th>
-                            <th>Contenido </th>
-                            <th>Estado </th>
-                            <th>Opciones</th>
+                            <td>{{article.id}}</td>
+                            <td>{{article.title}}</td>
+                            <td>{{article.content}}</td>
+                            <td>
+                                {% if article.public%}
+                                    <strong class="estado-publico">Publico</strong>
+                                {% else %}
+                                    <strong class="estado-privado">Privado</strong>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <button class="boton-eliminar"><i class="fa-solid fa-trash"></i><a href="{% url 'eliminar_articulo' article.id%}"></a></button>
+                                <button class="boton-actualizar"><a href=""><i class="fa-solid fa-pen-to-square"></i></a></button>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {% for article in articulos %}
-                            <tr>
-                                <td>{{article.id}}</td>
-                                <td>{{article.title}}</td>
-                                <td>{{article.content}}</td>
-                                <td>
-                                    {% if article.public%}
-                                        <strong class="estado-publico">Publico</strong>
-                                    {% else %}
-                                        <strong class="estado-privado">Privado</strong>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <button class="boton-eliminar"><i class="fa-solid fa-trash"></i><a href="{% url 'eliminar_articulo' article.id%}"></a></button>
-                                    <button class="boton-actualizar"><a href=""><i class="fa-solid fa-pen-to-square"></i></a></button>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            <script src="https://kit.fontawesome.com/93981ca0bd.js" crossorigin="anonymous"></script>
-            {% endblock %}
-        </body>
-    </html>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    <script src="https://kit.fontawesome.com/93981ca0bd.js" crossorigin="anonymous"></script>
+{% endblock %}
