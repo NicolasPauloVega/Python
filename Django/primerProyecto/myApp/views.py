@@ -219,15 +219,30 @@ def actualizar_articulo(request, id):
         actualizar.execute("Update myApp_article set content = 'Hayao Miyazaki', title = 'El niño' where id= %s", [id])
     return redirect('Listar')
 
+#Se crea una clase la cual va a manejar las solicitudes web que hace el usuario
 class formulario_Articulo(HttpRequest):
+
+    #Definimos una funcion la cual se encargara de mostrar el formulario de articulos
     def formulario(request):
+
+        #Se crea una instancia del formulario Articulo
         articulo = formularioArticulo()
+
+        #Se redirecciona al template formularioArticulo y se mostrar el formulario.
         return render(request, 'formularioArticulo.html', {"form": articulo})
     
+    #Definimos una funcion la cual guarda el formulario enviado y muestra un mensaje de exito.
     def procesar(request):
+
+        #Se crea una instancia del formulario Articulo
         articulo = formularioArticulo()
+
+        #Se verifica si el formulario que se envio es valido
         if articulo.is_valid():
+            #Si el formulario es valido se guarda 
             articulo.save()
+            #Se crea una instancia del formulario para que se pueda limpiar
             articulo = formularioArticulo()
+        #Se muestra el formulario en el template y se muestra un mensaje de exito
         return render(request, 'formularioArticulo.html', {"form": articulo, "mensaje": "ok"})
     
