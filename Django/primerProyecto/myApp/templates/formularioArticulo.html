@@ -6,21 +6,10 @@
 
 {% block content %}
 
-    {% if form.errors %}
-        <div class="alert alert-danger" role="alert">
-            This is a danger alert—check it out!
-        </div>
-    {% endif%}
-
     <h1>Registro de Articulo</h1>
 
     <form action="{% url "guardar_articulo" %}" method="POST">
         {% csrf_token %}
-        {% if mensaje %}
-            <div class="alert alert-success" role="alert">
-                Articulo registrado exitosamente!
-            </div>
-        {% endif%}
 
         {{ form.as_p }}
         
