@@ -4,6 +4,7 @@ from django.http import HttpRequest
 from myApp.models import Article
 from myApp.forms import formularioArticulo
 from django.contrib import messages
+from django.db.models import Q
 # Importamos la clase 'connection' de Django para interactuar directamente con la base de datos
 from django.db import connection
 
@@ -192,6 +193,9 @@ def editar_articulo(request,id):
 
 #Definiendo la vista 'articulos'
 def articulos(request):
+    articulos = Article.objects.filter(
+        Q(title__contains = "a")|Q(public = False)
+    )
     #guardar todos los objetos (registros) de article.
     articulos = Article.objects.order_by('id')
     #Enviando la informacion a el template articulos
