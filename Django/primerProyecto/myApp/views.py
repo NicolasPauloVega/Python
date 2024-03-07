@@ -1,5 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
+# Importamos la clase HttpRequest de Django para manejar las solicitudes web.
+from django.http import HttpRequest
 from myApp.models import Article
+from myApp.forms import formularioArticulo
 # Importamos la clase 'connection' de Django para interactuar directamente con la base de datos
 from django.db import connection
 
@@ -215,3 +218,16 @@ def actualizar_articulo(request, id):
     with connection.cursor() as actualizar:
         actualizar.execute("Update myApp_article set content = 'Hayao Miyazaki', title = 'El niño' where id= %s", [id])
     return redirect('Listar')
+
+class formulario_Articulo(HttpRequest):
+    def formulario(request):
+        articulo = formularioArticulo()
+        return render(request, 'formularioArticulo.html', {"form": articulo})
+    
+    def procesar(request):
+        articulo = formularioArticulo()
+        if articulo.is_valid():
+            articulo.save()
+            articulo = formularioArticulo()
+        return render(request, 'formularioArticulo.html', {"form": articulo, "mensaje": "ok"})
+    
