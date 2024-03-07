@@ -1,5 +1,4 @@
 {% extends 'layout.html' %}
-{% load crispy_forms_tags %}
 
 {% block title %}
     Registro
@@ -23,9 +22,9 @@
             </div>
         {% endif%}
 
-        {{ form|crispy }}
+        {{ form.as_p }}
         
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Block level button</button>
+        <button type="submit">Enviar</button>
     </form>
 
 {% endblock %}

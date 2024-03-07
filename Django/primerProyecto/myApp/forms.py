@@ -19,10 +19,8 @@ class formularioArticulo(forms.ModelForm):
             'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
             # Selector de archivo para cargar imágenes
             'image': forms.FileInput(attrs={'class': 'form-control-file'}),
-            # Casilla de verificación para indicar si es público o no
-            'public': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
             # Widget para el campo "public", un simple campo de selección para que el usuario indique si es público o privado
-            'public': forms.ChoiceField(choices=[(True, 'Public'), (False, 'Private')], widget=forms.RadioSelect(attrs={'class': 'form-check-input'})),
+            'public': forms.RadioSelect(attrs={'class': 'form-check-input'}, choices=[(True, 'Public'), (False, 'Private')]),
             # Selector de fecha solo para lectura
             'update_date': forms.DateInput(attrs={'class': 'form-control', 'readonly': True}),   
         }
