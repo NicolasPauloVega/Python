@@ -212,5 +212,6 @@ def eliminar_articulo(request, id):
 
 
 def actualizar_articulo(request, id):
-    articulos = Article.objects.raw("update myApp_article set content='Desarrollo de aplicaciones y paginas web' where id = {%articulo.id%}")
+    with connection.cursor() as actualizar:
+        actualizar.execute("Update myApp_article set content = 'Hayao Miyazaki', title = 'El niño' where id= %s", [id])
     return redirect('Listar')
