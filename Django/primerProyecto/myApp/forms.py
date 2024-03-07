@@ -1,10 +1,10 @@
 #Se importa el modulo forms de Django, que nos ayuda a crear formulatios html.
 from django import forms
 #Importamos de myApp el modelo Article
-from myApp.models import Article
+from .models import Article
 
 #creamos una clase la cual hereda de forms.modelForm el modelo Article
-class formularioArticulo(forms.modelForm):
+class formularioArticulo(forms.ModelForm):
     # Se crea una sub clase que tiene los datos del formulario
     class Meta:
         #Se especifica el modelo que se va a asociar con el formulario

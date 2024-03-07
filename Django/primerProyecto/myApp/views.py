@@ -235,7 +235,7 @@ class formulario_Articulo(HttpRequest):
     def procesar(request):
 
         #Se crea una instancia del formulario Articulo
-        articulo = formularioArticulo()
+        articulo = formularioArticulo(request.POST)
 
         #Se verifica si el formulario que se envio es valido
         if articulo.is_valid():

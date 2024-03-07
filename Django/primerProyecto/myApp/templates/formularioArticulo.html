@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     Registro
@@ -14,7 +15,7 @@
 
     <h1>Registro de Articulo</h1>
 
-    <form action="{% url "guardarArticulo" %}" method="POST">
+    <form action="{% url "guardar_articulo" %}" method="POST">
         {% csrf_token %}
         {% if mensaje %}
             <div class="alert alert-success" role="alert">
@@ -22,7 +23,7 @@
             </div>
         {% endif%}
 
-        {{ form }}
+        {{ form|crispy }}
         
         <button type="submit" class="btn btn-primary btn-lg btn-block">Block level button</button>
     </form>

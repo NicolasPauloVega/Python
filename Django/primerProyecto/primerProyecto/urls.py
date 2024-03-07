@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myApp.forms import formularioArticulo
 import myApp.views
 
 urlpatterns = [
@@ -41,4 +42,6 @@ urlpatterns = [
     path('articulos/', myApp.views.articulos, name="Listar"),
     path('borrar_articulos/<int:id>', myApp.views.eliminar_articulo, name="eliminar_articulo"),
     path('actualizar/<int:id>', myApp.views.actualizar_articulo, name="actualizar_articulo"),
+    path('registrar_articulo/', myApp.views.formulario_Articulo.formulario, name='registrar_articulo'),
+    path('guardar_articulo/', myApp.views.formulario_Articulo.procesar, name='guardar_articulo'),
 ]
