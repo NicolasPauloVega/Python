@@ -242,3 +242,25 @@ p{
 .lista_datos .estado-privado{
     color: orangered;
 }
+
+.agregar {
+    display: flex;
+    justify-content: center;
+}
+
+.agregar h2{
+    color: red;
+}
+
+.agregar button{
+    background-color: green;
+    border: solid black;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 10px;
+}
+
+.agregar button a{
+    text-decoration: none;
+    color: white;
+}
