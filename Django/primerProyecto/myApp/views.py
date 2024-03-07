@@ -193,11 +193,12 @@ def editar_articulo(request,id):
 
 #Definiendo la vista 'articulos'
 def articulos(request):
-    articulos = Article.objects.filter(
-        Q(title__contains = "a")|Q(public = False)
-    )
     #guardar todos los objetos (registros) de article.
     articulos = Article.objects.order_by('id')
+    articulos = Article.objects.filter(
+        # Q(title__contains = "a")|Q(public = True)
+        Q(title__istartswith = "a")|Q(title__iendswith = "a")
+    )
     #Enviando la informacion a el template articulos
     return render(request, 'articulos.html',{
         'articulos':articulos
