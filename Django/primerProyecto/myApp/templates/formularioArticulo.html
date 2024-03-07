@@ -11,6 +11,17 @@
 
         <form action="{% url "guardar_articulo" %}" method="POST">
             {% csrf_token %}
+            {% if messages %}
+                <script>
+                    {% for m in messages %}
+                        Swal.fire({
+                            title: '¡Enviado!',
+                            text: 'El formulario ha sido enviado con éxito.',
+                            icon: 'success'
+                        });
+                    {% endfor %}
+                </script>
+            {% endif %}
 
             {{ form.as_p }}
             

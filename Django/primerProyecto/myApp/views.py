@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.http import HttpRequest
 from myApp.models import Article
 from myApp.forms import formularioArticulo
+from django.contrib import messages
 # Importamos la clase 'connection' de Django para interactuar directamente con la base de datos
 from django.db import connection
 
@@ -209,7 +210,6 @@ def eliminar_articulo(request, id):
     with connection.cursor() as eliminar:
         # Realizamos una consulta en este caso con delete utilizando el execute y el nombre de la variable
         eliminar.execute("delete from myApp_article where id = %s", [id])
-    
     # Se redirige al usuario a Listar y lo muestra en la pagina
     return redirect('Listar')
 
@@ -241,6 +241,7 @@ class formulario_Articulo(HttpRequest):
         if articulo.is_valid():
             #Si el formulario es valido se guarda 
             articulo.save()
+            messages.success(request, "Articulo agregado")
             #Se crea una instancia del formulario para que se pueda limpiar
             articulo = formularioArticulo()
         #Se muestra el formulario en el template y se muestra un mensaje de exito
