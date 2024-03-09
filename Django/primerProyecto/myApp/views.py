@@ -195,10 +195,10 @@ def editar_articulo(request,id):
 def articulos(request):
     #guardar todos los objetos (registros) de article.
     articulos = Article.objects.order_by('id')
-    articulos = Article.objects.filter(
-        # Q(title__contains = "a")|Q(public = True)
-        Q(title__istartswith = "a")|Q(title__iendswith = "a")
-    )
+    # articulos = Article.objects.filter(
+    #     # Q(title__contains = "a")|Q(public = True)
+    #     Q(title__istartswith = "a")|Q(title__iendswith = "a")
+    # )
     #Enviando la informacion a el template articulos
     return render(request, 'articulos.html',{
         'articulos':articulos
@@ -215,6 +215,7 @@ def eliminar_articulo(request, id):
     with connection.cursor() as eliminar:
         # Realizamos una consulta en este caso con delete utilizando el execute y el nombre de la variable
         eliminar.execute("delete from myApp_article where id = %s", [id])
+        messages.success(request, "Articulo eliminado")
     # Se redirige al usuario a Listar y lo muestra en la pagina
     return redirect('Listar')
 
