@@ -9,7 +9,7 @@
     <div class="formulario">
         <h1>Registro de Articulo</h1>
 
-        <form action="{% url "guardar_articulo" %}" method="POST">
+        <form action="{% url "guardar_articulo" %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {% if messages %}
                 <script>
