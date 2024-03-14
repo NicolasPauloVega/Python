@@ -46,3 +46,6 @@ urlpatterns = [
     path('registrar_articulo/', myApp.views.formulario_Articulo.formulario, name='registrar_articulo'),
     path('guardar_articulo/', myApp.views.formulario_Articulo.procesar, name='guardar_articulo'),
 ]
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
