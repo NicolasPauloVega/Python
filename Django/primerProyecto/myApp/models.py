@@ -8,7 +8,7 @@ class Article(models.Model):
     # Campo para el contenido del artículo, donde escribirías el texto principal del artículo
     content = models.TextField(verbose_name="Contenido")
     # Campo para la imagen del artículo, aquí puedes subir una imagen que acompañe al artículo
-    image = models.ImageField(default='null', verbose_name="imagen")
+    image = models.ImageField(default='null', verbose_name="imagen", upload_to="articles")
     # Campo para indicar si el artículo está disponible públicamente o no (sí o no)
     public = models.BooleanField(verbose_name="¿Publicado?")
     # Campo para la fecha y hora en que se creó el artículo
@@ -24,7 +24,10 @@ class Article(models.Model):
         ordering=['id']
     def __str__(self):
         if self.public:
-            publico:
+            publico="(Publico)"
+        else:
+            publico="(Privado)"
+        return f"{self.id}-{self.title} : {publico}"
 
 # Definición del modelo Category (Categoría)
 class Category(models.Model):
