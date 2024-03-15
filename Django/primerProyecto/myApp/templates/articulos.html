@@ -13,6 +13,7 @@
                         <th>ID </th>
                         <th>Titulo </th>
                         <th>Descripcion </th>
+                        <th>imagen</th>
                         <th>Estado </th>
                         <th>Opciones</th>
                     </tr>
@@ -23,6 +24,11 @@
                             <td>{{article.id}}</td>
                             <td>{{article.title}}</td>
                             <td>{{article.content}}</td>
+                            <td>
+                                {% if article.image %}
+                                    <img src="{{article.image.url}}" alt="">
+                                {% endif %}
+                            </td>
                             <td>
                                 {% if article.public%}
                                     <strong class="estado-publico">Publico</strong>
