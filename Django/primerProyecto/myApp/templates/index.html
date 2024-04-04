@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load filters %}
+
+{% block seccion %}
+    {% comment 'inicio' %} <strong>Inicio</strong> {% endcomment %}
+{% endblock %}
+
+{% block title %}
+    {% comment 'nombre pagina' %} Inicio {% endcomment %}
+    {{titulo}}
+{% endblock %}
+
+{% block content %}
+<h2 class="title"> Inicio </h2><br>
+    {{block.super}}
+        <h1 class="titulo">{{title}}</h1><br>
+        <p> {{'servicio nacional de aprendizaje'|cut:' '}}</p><br>
+        {{mi_variable}}
+
+        {% comment 'Condicion' %} Se crea una condicion la cual mostrará el nombre que este ubicado dentro de la variable si no se encuentra no se mostrará. {% endcomment %}
+        {% if name == 'Nicolas Paulo Vega'%}
+            <p>{{name}}</p>
+        {% else %}
+            <strong>Nombre no existe</strong>
+        {% endif %}<br>
+        
+    <p>{{'<h1>texto</h1> <strong> Prueba</strong>'|striptags|wordcount}}</p>
+    {{"Nicolas Paulo Vega"|saludo}}
+        
+{% include 'fecha_actual.html' with saludo='Hola desde la plantilla' %}
+{% endblock %}

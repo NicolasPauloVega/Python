@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="../static/css/style.css"/>
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% comment 'Informacion de la pagina'%} Proyecto en desarrollo de una pagina de ventas {% endcomment %}
+    {% comment 'Cabeza de pagina'%} Cabeza de pagina {% endcomment %}
+    <header>
+        <div class="logotipo">
+            {% comment 'Logotipo' %} Logo de Django {% endcomment %}
+            <img src="../static/img/logo.webp" alt="">
+            <h1>Sitio web con Django | Nicolas Paulo Vega</h1>
+        </div>
+    </header>
+    {% comment 'menu' %} menu de navegacion {% endcomment %}
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Inicio</a>
+            </li>
+            <li>
+                <a href="{% url "hola_mundo" %}">Hola Mundo</a>
+            </li>
+            <li>
+                <a href="{% url "saludo" %}">Saludo</a>
+            </li>
+            <li>
+                <a href="{% url "presentacion" %}">Presentacion</a>
+            </li>
+            <li>
+                <a href="{% url "contacto" %}">Contacto</a>
+            </li>
+            <li>
+                <a href="{% url "productos_y_servicios" %}">Productos y servicios</a>
+            </li>
+            <li>
+                <a href="{% url "quienes_somos" %}">¿Quienes somos?</a>
+            </li>
+            <li>
+                <a href="{% url "ejemplos" %}">Ejercicios</a>
+            </li>
+            <li>
+                <a href="{% url "Listar"%}">Articulos</a>
+            </li>
+        </ul>
+    </nav>
+
+    {% comment 'Barra 3D'%} Se crea una barra 3D para el menu {% endcomment %}
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+        {% block seccion %}
+        
+        {% endblock %}
+
+        {% comment 'Caja'%} Se crea una caja con el contenido de la pagina original {% endcomment %}
+        <div id="content">
+            <div class="box">
+                {% block content %}
+                    <strong> Contenido del bloque Original </strong>
+                {% endblock %}
+            </div>
+        </div>
+
+        {% comment 'copyright' %} Derechos de autor {% endcomment %}
+        <footer>Master de Framework Django &copy; Nicolas Paulo Vega ({% now 'd/m/y h:i:s' %})</footer>
+</body>
+</html>

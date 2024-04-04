@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Saludo  
+{% endblock %}
+
+{% block seccion %}
+    {% comment 'saludo' %} <strong>Saludo</strong> {% endcomment %}
+{% endblock %}
+
+{% block content %}
+<h2 class="title">Saludo</h2><br>
+    {{block.super}}
+        <h1>Saludo de bienvenida</h1><br>
+        <h2>Bienvenido al SENA Tolima</h2><br>
+{% endblock %}
